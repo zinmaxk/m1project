@@ -157,9 +157,9 @@ jQuery(function ($) {
    }; // End is_exists
 
    //ladda button
-   <link rel="stylesheet" href="dist/ladda-themeless.min.css">;
-   <script src="dist/spin.min.js"></script>
-   <script src="dist/ladda.min.js"></script>
+   // <link rel="stylesheet" href="dist/ladda-themeless.min.css" />
+   // <script src="dist/spin.min.js"></script>
+   // <script src="dist/ladda.min.js"></script>
 
 
    /*==========================================================
