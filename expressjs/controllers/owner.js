@@ -16,6 +16,13 @@ module.exports = {
         }
         res.render('owner/owner-booking-center', { "page": page });
     },
+    ownerCenterCreate: (req, res) => {
+        const page = {
+            pageTitle: "OWNER CENTER CREATION",
+            breadCrumbTitle: "Owner Center Creation"
+        }
+        res.render('owner/owner-centercreation', { "page": page });
+    },
     ownerMember: (req, res) => {
         const page = {
             pageTitle: "OWNER member",
@@ -30,4 +37,4 @@ module.exports = {
         }
         res.render('owner/owner-report', { "page": page });
     }
-}
+    }

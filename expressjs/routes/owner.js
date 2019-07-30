@@ -9,4 +9,6 @@ module.exports = (router) => {
         .get(controller.ownerMember);
     router.route('/owner/owner-report')
         .get(controller.ownerReport);
+    router.route('/owner/owner-centercreation')
+        .get(controller.ownerCenterCreate);
 };
