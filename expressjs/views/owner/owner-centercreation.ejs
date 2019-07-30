@@ -14,23 +14,110 @@
             <% include ../partials/banner %>
                 <!-- Banner end -->
                 <!-- ts Content start -->
-        <section id="ts-sponsors" class="ts-sponsors">
-            <!-- Center management -->
+        <section class="ts-contact-form">
             <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-4 mx-auto">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
                         <h2 class="section-title text-center">
-                            <span>Follow actions below </span>
-                            Create New Center
+                            <span> Create new center </span>
+                            Center
                         </h2>
+                    </div><!-- col end-->
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" >
+                        <form id="contact-form" class="contact-form" action="#" method="post">
+                            <div class="error-container"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Center Name" name="centername" id="centername"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Address" name="Address" id="Address"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="City" name="City" id="City" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-email" placeholder="Country" name="Country" id="Country"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Phone Number" name="phone" id="phone"
+                                              type="number" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Address" name="address" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="City" name="City" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Country" name="country" id="#"
+                                               required>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Time Open" name="opentime" id="opentime"
+                                             type ="datetime"  required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Time Close" name="closetime" id="closetime"
+                                               type ="datetime"  required>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="sponsors-wrap">
+                                <div class="row sponsor-padding text-center">
+                                    <!-- Col 1 end -->
+                                    <div class="col-md-6 text-right">
+                                        <a href="#" class="btn"> Create </a>
+                                    </div>
+                                    <!-- Col 2 end -->
+                                    <div class="col-md-6 text-left">
+                                        <a href="#" class="btn">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
+
+                    </form><!-- Contract form end -->
                 </div>
             </div>
-
-
-
+    </div>
+            <div class="speaker-shap">
+                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            </div>
         </section>
-       
+
 
                 <!-- footer start-->
                 <% include ../partials/footer %>
