@@ -11,4 +11,6 @@ module.exports = (router) => {
         .get(controller.ownerReport);
     router.route('/owner/owner-centercreation')
         .get(controller.ownerCenterCreate);
+    router.route('/owner/owner-yardcreation')
+        .get(controller.ownerYardCreate);
 };

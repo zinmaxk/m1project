@@ -23,6 +23,13 @@ module.exports = {
         }
         res.render('owner/owner-centercreation', { "page": page });
     },
+    ownerYardCreate: (req, res) => {
+        const page = {
+            pageTitle: "OWNER YARD CREATION",
+            breadCrumbTitle: "Owner Yard Creation"
+        }
+        res.render('owner/owner-yardcreation', { "page": page });
+    },
     ownerMember: (req, res) => {
         const page = {
             pageTitle: "OWNER member",
