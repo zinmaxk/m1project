@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "f0a95e28-e3a1-47eb-a957-781b12e17c42",
+		"name": "SportClub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NGQ0N2I1OS1mZGJjLTQ0MTMtYjA5ZS1kZTcxZjkwMDlkZjMiLCJleHAiOjE1MzQ5NjY3MTQsIm5iZiI6MCwiaWF0IjoxNTMzNzQ4MDMzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGgvcmVhbG1zL2ZmZiIsImF1ZCI6InByb3h5Iiwic3ViIjoiOGM0OWZkZjUtODIxZC00ODQ5LWI4NTYtNDg1ZWNjOTlmZGM5IiwidHlwIjoiSUQiLCJhenAiOiJwcm94eSIsIm5vbmNlIjoiNTRmYjZhY2JmOTZlYTUxY2JkNmU1MjJiZjJiMWZiNDQiLCJhdXRoX3RpbWUiOjE1MzM3NDc0ODMsInNlc3Npb25fc3RhdGUiOiI5NWI2ZGM0YS0yZWY0LTQ2NmMtODY5OC1mMThkNzMxNDJlYmQiLCJhY3IiOiIwIiwiYWNjb3VudENvZGUiOiI0Njk1NTIiLCJ3b29JZCI6MTA2LCJwdXNoSWQiOjEwLCJyb2xlcyI6WyJVc2VyIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkFkbWluIl0sImlkIjoiOGM0OWZkZjUtODIxZC00ODQ5LWI4NTYtNDg1ZWNjOTlmZGM5In0.WODjw9p2Msr7o8uXE6OP2UJq95yJ-h0zyAiQYT-tMx4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "shopapikey",
+						"type": "text"
+					},
+					{
+						"key": "FFF-Auth",
+						"value": "V1.1",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "https://fff-dev.com",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "abtest_session_id=anon_5c10ce85b58f02.56318133; ajs_group_id=null; ajs_anonymous_id=%223f2dcb46-2261-4013-8c83-bb768d6e3b1c%22; _ga=GA1.2.227554742.1544605325; _gid=GA1.2.14978009.1544605325; _gat_UA-15829841-3=1; __zlcmid=pphrMaM92ANX9K; wordpress_sec_6c9cf866403ed106ad930eaed866c66b=anish.khare%40fabfitfun.com%7C1576162938%7CPp3oVIEM3q3PhWOACdsTupLRhidn1NbFCBAVztD9NAz%7Ca2062366a989be79db1d374f99dcbeb810cf392caf6b34d164e66ba24bb8d364; wordpress_logged_in_6c9cf866403ed106ad930eaed866c66b=anish.khare%40fabfitfun.com%7C1576162938%7Cml1XmNtLWCXn019SxHM1487nmBPXKpbbZSBeO1OI1RZ%7Ce55e4dddf6da5b9cf91c9ee1e3bea8ef51c8fdf41a3b3d4a9a19d386a98c332f; fff_shop_skipwelcome=1; sm_session_info=%7B%22sessionId%22%3A%22dce4fee9-428f-451d-b05a-e248798eaf95%22%2C%22sessionCreationDate%22%3A%222018-12-12T09%3A02%3A21.760Z%22%7D; ajs_user_id=%22469552%22",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<new_subscription_notification>\r\n   <account>\r\n      <account_code>tuananh2903@mailinator.com</account_code>\r\n      <username nil=\"true\" />\r\n      <email>tuananh2903@mailinator.com</email>\r\n      <first_name>Anh</first_name>\r\n      <last_name>Vu</last_name>\r\n      <company_name nil=\"true\" />\r\n      <phone nil=\"true\" />\r\n   </account>\r\n   <subscription>\r\n      <plan>\r\n         <plan_code>fffvip</plan_code>\r\n         <name>Fabfitfun VIP</name>\r\n      </plan>\r\n      <uuid>4cbdc5de2562ca71d8607641e59f8040</uuid>\r\n      <state>active</state>\r\n      <quantity type=\"integer\">1</quantity>\r\n      <total_amount_in_cents type=\"integer\">5799</total_amount_in_cents>\r\n      <subscription_add_ons type=\"array\">\r\n         <subscription_add_on>\r\n            <add_on_code>AK</add_on_code>\r\n            <name>Alaska Shipping</name>\r\n            <quantity type=\"integer\">1</quantity>\r\n            <unit_amount_in_cents type=\"integer\">800</unit_amount_in_cents>\r\n         </subscription_add_on>\r\n      </subscription_add_ons>\r\n      <activated_at type=\"datetime\">2019-06-13T03:56:15Z</activated_at>\r\n      <canceled_at type=\"datetime\" nil=\"true\" />\r\n      <expires_at type=\"datetime\" nil=\"true\" />\r\n      <current_period_started_at type=\"datetime\">2019-06-13T03:56:15Z</current_period_started_at>\r\n      <current_period_ends_at type=\"datetime\">2019-09-13T03:56:15Z</current_period_ends_at>\r\n      <trial_started_at type=\"datetime\" nil=\"true\" />\r\n      <trial_ends_at type=\"datetime\" nil=\"true\" />\r\n      <paused_at type=\"datetime\" nil=\"true\" />\r\n      <resume_at type=\"datetime\" nil=\"true\" />\r\n      <remaining_pause_cycles nil=\"true\" />\r\n   </subscription>\r\n</new_subscription_notification>\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/recurly.raw_notification.topic",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recurly.raw_notification.topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" : \"admin\",\n\t\"password\" : \"123456\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
