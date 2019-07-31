@@ -5,6 +5,8 @@ const routesOwner = require('./owner');
 const routesUser = require('./user');
 const controller = require('../controllers/index')
 
+const api = require('../api');
+
 module.exports = (router) => {
     //users(router);
     router.route('/').get(function(req, res, next) {
@@ -100,6 +102,30 @@ module.exports = (router) => {
             breadCrumbTitle: "Register"
         }
         res.render('register', { "page": page });
+    });
+
+    router.route('/test-call-api').get(function (req, res) {
+        // api.getGetInfo({}, function (error, response, body) {
+        //     const page = {
+        //         pageTitle: "Test API",
+        //         breadCrumbTitle: "Test API"
+        //     }
+        //     if (typeof body === 'string') { //expecting data to be json object
+        //         body = JSON.parse(body);
+        //     }
+        //     res.render('test', {"page": page, "data": body });
+        // })
+        api.createEmployee(	{"name":"Kiet","salary":"123","age":"23"}, function (error, response, body) {
+            const page = {
+                pageTitle: "Test API Create Employee",
+                breadCrumbTitle: "Test API"
+            };
+            console.log(error);
+            // if (typeof body === 'string') { //expecting data to be json object
+            //     body = JSON.parse(body);
+            // }
+            res.render('test', {"page": page, "data": body });
+        })
     });
 
     routesUser(router);
