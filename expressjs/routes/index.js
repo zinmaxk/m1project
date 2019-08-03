@@ -59,7 +59,7 @@ module.exports = (router) => {
         res.render('blog', { "page": page });
     });
 
-    router.route('/pricing').get(function(req, res) {
+    router.route('/membership').get(function(req, res) {
         // NEW CODE
         const page = {
             pageTitle: "OUR PRICE",
