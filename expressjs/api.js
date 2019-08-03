@@ -15,7 +15,11 @@ module.exports = {
         callapi('/api/views/memberships', GET, params, callback);
     },
 
-    getCenter: (params = {}, callback) => {
+    getCenters: (params = {}, callback) => {
         callapi('/api/views/centers', GET, params, callback);
+    },
+
+    getYards: (params = {}, callback) => {
+        callapi('/api/views/yards', GET, params, callback);
     },
 };

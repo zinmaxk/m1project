@@ -19,6 +19,6 @@ module.exports = (router) => {
         .get(controller.ownerCenterDetail);
     router.route('/owner/owner-yardlist')
         .get(controller.ownerYardList);
-    router.route('/owner/owner-yarddetail')
+    router.route('/owner/owner-yarddetail/:id')
         .get(controller.ownerYardDetail);
 };

@@ -49,7 +49,7 @@ module.exports = {
     },
     ownerCenterList: (req, res) => {
         // TODO: need to authorized
-        api.getCenter({}, function (error, response, body) {
+        api.getCenters({}, function (error, response, body) {
             centers = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Center List",
@@ -66,11 +66,15 @@ module.exports = {
         res.render('owner/owner-centerdetail', {"page": page});
     },
     ownerYardList: (req, res) => {
-        const page = {
-            pageTitle: "OWNER Yard List",
-            breadCrumbTitle: "Yard List"
-        }
-        res.render('owner/owner-yardlist', {"page": page});
+        // TODO: need to authorized
+        api.getYards({}, function (error, response, body) {
+            yards = processJsonData(body);
+            const page = {
+                pageTitle: "OWNER Yard List",
+                breadCrumbTitle: "Yard List"
+            };
+            res.render('owner/owner-yardlist', {page: page, yards: yards});
+        });
     },
     ownerYardDetail: (req, res) => {
         const page = {

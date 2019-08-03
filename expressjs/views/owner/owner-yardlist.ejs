@@ -6,116 +6,62 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ../partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ../partials/banner %>
-                <!-- Banner end -->
-                  <!-- Yard list -->
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ../partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ../partials/banner %>
+    <!-- Banner end -->
+    <!-- Yard list -->
 
-        <section class="ts-contact-form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="section-title text-center">
-                            <span> List of yard </span>
-                            Yard
-                        </h2>
-                    </div><!-- col end-->
-                </div>
-
-            </div>
-            <div class="speaker-shap">
-                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-            </div>
-
-
+    <section class="ts-contact-form">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto" >
-                    <form id="contact-form" class="contact-form" action="#" method="post">
-                        <div class="error-container"></div>
-                        <div class="row">
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p> <a href ="/owner/owner-yarddetail"> Yard Name </a></p>
-                                        <p> Sport Name </p>
-                                        <p> Phone Number </p>
-                                        <p> City </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-                </div>
-
-                </form><!-- Contract form end -->
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> List of yard </span>
+                        Yard
+                    </h2>
+                </div><!-- col end-->
             </div>
-    </div>
+
+        </div>
+        <div class="speaker-shap">
+            <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="error-container"></div>
+
+                <div class="row">
+                    <% yards.forEach(function (yard) { %>
+                        <div class="col-md-6" style="padding-bottom: 30px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><a href="/owner/owner-yarddetail/<%= yard.yard_id %>"> <%= yard.yard_name %> </a>
+                                    </p>
+                                    <p> <%= yard.sport_name %> </p>
+                                    <p> <%= yard.phone %> </p>
+                                    <p> <%= yard.city %> </p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
 
 
     </section>
 
-                <!-- footer start-->
-                <% include ../partials/footer %>
-                    <!-- Body inner end -->
-    </div>
-    <% include ../partials/footer-script %>
+    <!-- footer start-->
+    <% include ../partials/footer %>
+    <!-- Body inner end -->
+</div>
+<% include ../partials/footer-script %>
 </body>
 
 </html>
