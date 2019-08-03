@@ -59,6 +59,8 @@ module.exports = {
         });
     },
     ownerCenterDetail: (req, res) => {
+        let id = req.params.id;
+
         const page = {
             pageTitle: "OWNER Center Detail",
             breadCrumbTitle: "Center Detail"
@@ -77,6 +79,7 @@ module.exports = {
         });
     },
     ownerYardDetail: (req, res) => {
+        let id = req.params.id;
         const page = {
             pageTitle: "OWNER Yard Detail",
             breadCrumbTitle: "Yard Detail"

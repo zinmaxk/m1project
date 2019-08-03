@@ -19,7 +19,15 @@ module.exports = {
         callapi('/api/views/centers', GET, params, callback);
     },
 
+    getCenterDetail: (params = {}, callback) => {
+        callapi('/api/center/' + params.id, GET, params, callback);
+    },
+
     getYards: (params = {}, callback) => {
         callapi('/api/views/yards', GET, params, callback);
+    },
+
+    getYardDetail: (params = {}, callback) => {
+        callapi('/api/yard/' + params.id, GET, params, callback);
     },
 };
