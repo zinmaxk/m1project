@@ -42,6 +42,14 @@ app.use(function(req, res, next) {
     return res.status(404).render('404error', {page: page});
 });
 
+app.use(function(req, res, next) {
+    const page = {
+        pageTitle: 'Error 500!',
+        breadCrumbTitle: "Oops... Something went wrong"
+    };
+    return res.status(500).render('500error', {page: page});
+});
+
 app.listen(`${stage.port}`, () => {
     console.log(`Server now listening at http://localhost:${stage.port}`);
 });
