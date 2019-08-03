@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div class="body-inner">
+        <!-- Header start -->
+        <% include ../partials/header %>
+            <!--/ Header end -->
+            <!-- Banner start -->
+            <% include ../partials/banner %>
+                <!-- Banner end -->
+                <!-- ts Content start -->
+        <section class="ts-contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span> Center Detail </span>
+                            Center 1
+                        </h2>
+                    </div><!-- col end-->
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" >
+                        <form id="contact-form" class="contact-form" action="#" method="post">
+                            <div class="error-container"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Center Name"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Website"
+                                               type="text" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Phone Number" name="phone" id="phone"
+                                               type="number" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Address" name="address" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="City" name="City" id="City" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-email" placeholder="Country" name="Country" id="Country"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Time Open" name="opentime" id="opentime"
+                                             type ="datetime"  required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Time Close" name="closetime" id="closetime"
+                                               type ="datetime"  required>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="sponsors-wrap">
+                                <div class="row sponsor-padding text-center">
+                                    <!-- Col 1 end -->
+                                    <div class="col-md-6 text-right">
+                                        <a href="#" class="btn"> Edit </a>
+                                    </div>
+                                    <!-- Col 2 end -->
+                                    <div class="col-md-6 text-left">
+                                        <a href="/owner/owner-center" class="btn"> Home </a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    </form><!-- Contract form end -->
+                </div>
+            </div>
+    </div>
+            <div class="speaker-shap">
+                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            </div>
+        </section>
+
+
+                <!-- footer start-->
+                <% include ../partials/footer %>
+                    <!-- Body inner end -->
+    </div>
+    <% include ../partials/footer-script %>
+</body>
+
+</html>
