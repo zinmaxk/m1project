@@ -8,13 +8,6 @@ module.exports = {
         }
         res.render('admin/admin-center', { "page": page });
     },
-    adminMembership: (req, res) => {
-        const page = {
-            pageTitle: "admin membership",
-            breadCrumbTitle: "admin membership"
-        }
-        res.render('admin/admin-membership', { "page": page });
-    },
     adminReport: (req, res) => {
         const page = {
             pageTitle: "admin report",

@@ -85,6 +85,7 @@ module.exports = (router) => {
         }
         res.render('contact', { "page": page });
     });
+
     router.route('/schedule-list').get(controller.getAllSchedule);
     router.route('/class-info').get(function(req, res) {
         // NEW CODE
