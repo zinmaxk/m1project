@@ -59,14 +59,7 @@ module.exports = (router) => {
         res.render('blog', { "page": page });
     });
 
-    router.route('/pricing').get(function(req, res) {
-        // NEW CODE
-        const page = {
-            pageTitle: "OUR PRICE",
-            breadCrumbTitle: "Membership"
-        }
-        res.render('membership', { "page": page });
-    });
+    router.route('/pricing').get(controller.pricing);
 
     router.route('/404error').get(function(req, res) {
         // NEW CODE
