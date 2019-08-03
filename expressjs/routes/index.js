@@ -63,9 +63,9 @@ module.exports = (router) => {
         // NEW CODE
         const page = {
             pageTitle: "OUR PRICE",
-            breadCrumbTitle: "Pricing"
+            breadCrumbTitle: "Membership"
         }
-        res.render('pricing', { "page": page });
+        res.render('membership', { "page": page });
     });
 
     router.route('/404error').get(function(req, res) {

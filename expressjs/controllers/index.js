@@ -24,7 +24,7 @@ module.exports = {
                 time: "12:00 - 15:00",
                 thumbnail: "/images/speakers/speaker1.jpg",
                 title: "My title ",
-                location: "Tringo ",
+                location: "Bean",
                 brief: "How you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge. How you transform "
             }
             for (let index = 0; index < 10; index++) {
