@@ -11,7 +11,7 @@ module.exports = {
         callapi('/api/v1/create', POST, params, callback);
     },
     // Real API
-    getPricing: (params = {}, callback) => {
+    getMemberships: (params = {}, callback) => {
         callapi('/api/views/memberships', GET, params, callback);
     }
 };

@@ -40,8 +40,8 @@ module.exports = {
             res.render('schedule-list', {"page": page, "scheduleList": scheduleList});
         })
     },
-    pricing: (req, res) => {
-        api.getPricing({}, function (error, response, body) {
+    membership: (req, res) => {
+        api.getMemberships({}, function (error, response, body) {
             const page = {
                 pageTitle: "OUR PRICE",
                 breadCrumbTitle: "Membership"
