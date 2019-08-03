@@ -29,7 +29,7 @@ const routes = require('./routes/index.js');
 app.use('/', routes(router));
 
 app.listen(`${stage.port}`, () => {
-    console.log(`Server now listening at localhost:${stage.port}`);
+    console.log(`Server now listening at http://localhost:${stage.port}`);
 });
 
 module.exports = app;

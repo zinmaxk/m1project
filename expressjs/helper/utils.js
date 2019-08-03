@@ -29,5 +29,12 @@ module.exports = {
             };
             res.status(401).send(result);
         }
+    },
+    processJsonData: (data) => {
+        if (typeof data === 'string') { //expecting data to be json object
+            data = JSON.parse(data);
+        }
+
+        return data;
     }
 };

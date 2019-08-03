@@ -28,63 +28,40 @@
             <!-- Player membership price-->
 
             <div class="row">
+                <%
+                    let idx = 1;
+                    playerPricing.forEach(function(pricing){
+                    let className = 'icon-pricing-1Asset-1';
+                    let active = '';
+                    if (idx % 2 == 0) {
+                        className = 'icon-pricing-2Asset-2';
+                        active = 'active';
+                    } else if (idx % 3 == 0) {
+                        className = 'icon-pricing-3Asset-3';
+                    }
+                    idx++;
+                    if (idx > 3) idx = 1;
+                %>
                 <div class="col-lg-4">
-                    <div class="ts-pricing-item">
+                    <div class="ts-pricing-item <%= active %>">
                         <div class="ts-pricing-header">
-                            <i class="icon-pricing-1Asset-1"></i>
-                            <h2 class="ts-pricing-name">Silver</h2>
+                            <i class="<%= className %>"></i>
+                            <h2 class="ts-pricing-name"><%= pricing.cardLevel %></h2>
                             <h3 class="ts-pricing-price">
                                 <img class="currency" src="images/pricing/dollar.png" alt="">
-                                <span>39.9</span>
+                                <span><%= pricing.price %></span>
 
-                                </h3>
-                            <h4 class="ts-pricing-price"> Section: 1</h4>
-
-                        </div>
-                        <p>
-                            Membership for player as silver
-                        </p>
-                        <a href="/contact" class="btn btn-round">Contact us</a>
-                    </div>
-                </div><!-- col end-->
-                <div class="col-lg-4">
-                    <div class="ts-pricing-item active">
-                        <div class="ts-pricing-header">
-                            <i class="icon-pricing-2Asset-2"></i>
-                            <h2 class="ts-pricing-name">Gold</h2>
-                            <h3 class="ts-pricing-price">
-                                <img class="currency" src="images/pricing/dollar.png" alt="">
-                                <span>59.9</span>
                             </h3>
-                            <h4 class="ts-pricing-price"> Section: 1</h4>
+                            <h4 class="ts-pricing-price"> Section: <%= pricing.session %></h4>
 
                         </div>
                         <p>
-                            Membership for player as gold
+                            <%= pricing.note %>
                         </p>
                         <a href="/contact" class="btn btn-round">Contact us</a>
                     </div>
                 </div><!-- col end-->
-                <div class="col-lg-4">
-                    <div class="pricing-item">
-                        <div class="ts-pricing-item">
-                            <div class="ts-pricing-header">
-                                <i class="icon-pricing-3Asset-3"></i>
-                                <h2 class="ts-pricing-name">Platinum</h2>
-                                <h3 class="ts-pricing-price">
-                                    <img class="currency" src="images/pricing/dollar.png" alt="">
-                                    <span>99.9</span>
-                                </h3>
-                                <h4 class="ts-pricing-price"> Section: 1</h4>
-
-                            </div>
-                            <p>
-                                Platinum player
-                            </p>
-                            <a href="/contact" class="btn btn-round">Contact us</a>
-                        </div>
-                    </div>
-                </div><!-- col end-->
+                <% }) %>
             </div>
         </div><!-- container end-->
         <div class="speaker-shap">
@@ -93,7 +70,7 @@
     </section>
 
 
-    <section class="ts-pricing gradient" style="background-image: url(./images/pricing/pricing_img.jpg)">
+    <section class="ts-pricing gradient" style="background-image: url(./images/pricing/pricing_img.jpeg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -105,63 +82,40 @@
             </div><!-- col end-->
             <!-- row end-->
             <div class="row">
+                <%
+                idx = 1;
+                ownerPricing.forEach(function(pricing){
+                    let className = 'icon-pricing-1Asset-1';
+                    let active = '';
+                    if (idx % 2 == 0) {
+                        className = 'icon-pricing-2Asset-2';
+                        active = 'active';
+                    } else if (idx % 3 == 0) {
+                        className = 'icon-pricing-3Asset-3';
+                    }
+                    idx++;
+                    if (idx > 3) idx = 1;
+                %>
                 <div class="col-lg-4">
-                    <div class="ts-pricing-item">
+                    <div class="ts-pricing-item <%= active %>">
                         <div class="ts-pricing-header">
-                            <i class="icon-pricing-1Asset-1"></i>
-                            <h2 class="ts-pricing-name">Silver</h2>
+                            <i class="<%= className %>"></i>
+                            <h2 class="ts-pricing-name"><%= pricing.cardLevel %></h2>
                             <h3 class="ts-pricing-price">
                                 <img class="currency" src="images/pricing/dollar.png" alt="">
-                                <span>39.9</span>
+                                <span><%= pricing.price %></span>
 
                             </h3>
-                            <h4 class="ts-pricing-price"> Section: 1</h4>
+                            <h4 class="ts-pricing-price"> Section: <%= pricing.session %></h4>
 
                         </div>
                         <p>
-                                Silver owner
+                            <%= pricing.note %>
                         </p>
                         <a href="/contact" class="btn btn-round">Contact us</a>
                     </div>
                 </div><!-- col end-->
-                <div class="col-lg-4">
-                    <div class="ts-pricing-item active">
-                        <div class="ts-pricing-header">
-                            <i class="icon-pricing-2Asset-2"></i>
-                            <h2 class="ts-pricing-name">Gold</h2>
-                            <h3 class="ts-pricing-price">
-                                <img class="currency" src="images/pricing/dollar.png" alt="">
-                                <span>59.9</span>
-                            </h3>
-                            <h4 class="ts-pricing-price"> Section: 1</h4>
-
-                        </div>
-                        <p>
-                            Gold owner
-                        </p>
-                        <a href="/contact" class="btn btn-round">Contact us</a>
-                    </div>
-                </div><!-- col end-->
-                <div class="col-lg-4">
-                    <div class="pricing-item">
-                        <div class="ts-pricing-item">
-                            <div class="ts-pricing-header">
-                                <i class="icon-pricing-3Asset-3"></i>
-                                <h2 class="ts-pricing-name">Platinum</h2>
-                                <h3 class="ts-pricing-price">
-                                    <img class="currency" src="images/pricing/dollar.png" alt="">
-                                    <span>99.9</span>
-                                </h3>
-                                <h4 class="ts-pricing-price"> Section: 1</h4>
-
-                            </div>
-                            <p>
-                                Platinum owner
-                            </p>
-                            <a href="/contact" class="btn btn-round">Contact us</a>
-                        </div>
-                    </div>
-                </div><!-- col end-->
+                <% }) %>
             </div>
         </div><!-- container end-->
         <div class="speaker-shap">

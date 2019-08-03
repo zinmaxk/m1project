@@ -1,7 +1,7 @@
 //
 //
 const controller = require('../controllers/users');
-const validateToken = require('../utils').validateToken;
+const validateToken = require('../helper/utils').validateToken;
 
 module.exports = (router) => {
     router.route('/user/login').get(function(req, res) {
