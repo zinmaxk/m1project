@@ -70,6 +70,15 @@ module.exports = (router) => {
         res.render('404error', { "page": page });
     });
 
+    router.route('/500error').get(function(req, res) {
+        // NEW CODE
+        const page = {
+            pageTitle: "500 Internal Error",
+            breadCrumbTitle: "500 Internal Error"
+        }
+        res.render('500error', { "page": page });
+    });
+
     router.route('/contact').get(function(req, res) {
         // NEW CODE
         const page = {

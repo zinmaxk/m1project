@@ -57,5 +57,20 @@ module.exports = {
             breadCrumbTitle: "Center Detail"
         }
         res.render('owner/owner-centerdetail', { "page": page });
+    },
+    ownerYardList: (req, res) => {
+        const page = {
+            pageTitle: "OWNER Yard List",
+            breadCrumbTitle: "Yard List"
+        }
+        res.render('owner/owner-yardlist', { "page": page });
+    },
+    ownerYardDetail: (req, res) => {
+        const page = {
+            pageTitle: "OWNER Yard Detail",
+            breadCrumbTitle: "Yard Detail"
+        }
+        res.render('owner/owner-yarddetail', { "page": page });
     }
-    }
+
+}
