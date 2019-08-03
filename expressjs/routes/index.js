@@ -98,13 +98,13 @@ module.exports = (router) => {
         res.render('class-info', { "page": page });
     });
 
-    router.route('/register').get(function(req, res) {
+    router.route('/changepassword').get(function(req, res) {
         // NEW CODE
         const page = {
-            pageTitle: "Register",
-            breadCrumbTitle: "Register"
+            pageTitle: "Change Password",
+            breadCrumbTitle: "Change Password"
         }
-        res.render('register', { "page": page });
+        res.render('changepassword', { "page": page });
     });
 
     router.route('/test-call-api').get(function (req, res) {
