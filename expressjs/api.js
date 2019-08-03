@@ -13,5 +13,9 @@ module.exports = {
     // Real API
     getMemberships: (params = {}, callback) => {
         callapi('/api/views/memberships', GET, params, callback);
-    }
+    },
+
+    getCenter: (params = {}, callback) => {
+        callapi('/api/views/centers', GET, params, callback);
+    },
 };
