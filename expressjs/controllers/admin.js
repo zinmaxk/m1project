@@ -35,5 +35,19 @@ module.exports = {
             breadCrumbTitle: "Contract Creation"
         }
         res.render('admin/contract-creation', { "page": page });
+    },
+    contractDetail: (req, res) => {
+        const page = {
+            pageTitle: "Contract Detail",
+            breadCrumbTitle: "Contract Detail"
+        }
+        res.render('admin/contract-detail', { "page": page });
+    },
+    contractList: (req, res) => {
+        const page = {
+            pageTitle: "Contract List",
+            breadCrumbTitle: "Contract List"
+        }
+        res.render('admin/contract-list', { "page": page });
     }
 }

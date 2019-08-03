@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div class="body-inner">
+        <!-- Header start -->
+        <% include ../partials/header %>
+            <!--/ Header end -->
+            <!-- Banner start -->
+            <% include ../partials/banner %>
+                <!-- Banner end -->
+                <!-- ts Content start -->
+        <!Contract form !>
+        <section class="ts-contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span> Edit contract </span>
+                            Contract
+                        </h2>
+                    </div><!-- col end-->
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" >
+                        <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
+                            <div class="error-container"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="First Name" name="firstname" id="f-name"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Last Name" name="lastname" id="l-name"
+                                               type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Username" name="username" id="username" type="text"
+                                               readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-email" placeholder="DOB" name="idcard" id="#"
+                                               type="number" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Phone" name="phone" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Address" name="address" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="City" name="City" id="#"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Country" name="country" id="#"
+                                               required>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label> Category </label>
+                                    <select>
+                                        <option value="owner">Owner</option>
+                                        <option value="player">Player</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label> Type of membership</label>
+                                        <select>
+                                            <option value="Silver">Silver</option>
+                                            <option value="Gold">Gold</option>
+                                            <option value="Platinum">Platinum</option>
+                                        </select>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-subject" placeholder="Price" name="price" id="#"
+                                               readonly>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sponsors-wrap">
+                                <div class="row sponsor-padding text-center">
+                                    <!-- Col 1 end -->
+                                    <div class="col-md-6 text-right">
+                                        <a href="#" class="btn"> Edit </a>
+                                    </div>
+                                    <!-- Col 2 end -->
+                                    <div class="col-md-6 text-left">
+                                        <a href="#" class="btn">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    </form><!-- Contract form end -->
+                </div>
+            </div>
+    </div>
+            <div class="speaker-shap">
+                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            </div>
+        </section>
+                <!-- footer start-->
+                <% include ../partials/footer %>
+                    <!-- Body inner end -->
+    </div>
+    <% include ../partials/footer-script %>
+</body>
+
+</html>
