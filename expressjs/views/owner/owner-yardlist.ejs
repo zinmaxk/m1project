@@ -35,7 +35,6 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="error-container"></div>
-
                 <div class="row">
                     <% yards.forEach(function (yard) { %>
                         <div class="col-md-6" style="padding-bottom: 30px;">
@@ -43,9 +42,9 @@
                                 <div class="card-body">
                                     <p><a href="/owner/owner-yarddetail/<%= yard.yard_id %>"> <%= yard.yard_name %> </a>
                                     </p>
-                                    <p> <%= yard.sport_name %> </p>
-                                    <p> <%= yard.phone %> </p>
-                                    <p> <%= yard.city %> </p>
+                                    <p> Sport name: <%= yard.sport_name %> </p>
+                                    <p> Yard Phone: <%= yard.phone %> </p>
+                                    <p> Yard City: <%= yard.city %> </p>
                                 </div>
                             </div>
                         </div>

@@ -24,17 +24,30 @@
                     </h2>
                 </div><!-- col end-->
             </div>
-            <div class="text-center">
-                <ul style="list-style-type:none;">
-                    <% centers.forEach(function(center) { %>
-                        <li>
-                            <a href="/owner/owner-centerdetail/<%= center.id%>">
-                                <%= center.name%>
-                            </a>
-                        </li>
-                    <% }) %>
-                </ul>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="error-container"></div>
+                    <div class="row">
+                        <% centers.forEach(function(center) { %>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p><a href="/owner/owner-centerdetail/<%= center.id%>"> <%= center.name %> </a>
+                                        </p>
+                                        <p> Time Open: <%= center.timeOpen %> </p>
+                                        <p> Time Close: <%= center.timeClose %> </p>
+                                        <p> Center City:<%= center.city %> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
             </div>
+
+
+
         </div>
 </div>
 </div>
