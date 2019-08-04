@@ -6,158 +6,172 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ../partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ../partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-        <!Contract form !>
-        <section class="ts-contact-form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="section-title text-center">
-                            <span> Contract detail </span>
-                            Contract 1
-                        </h2>
-                    </div><!-- col end-->
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto" >
-                        <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
-                            <div class="error-container"></div>
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ../partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ../partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <!Contract form !>
+    <section class="ts-contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> Contract detail </span>
+                        <%= data.firstName %> <%= data.flastName %>
+                    </h2>
+                </div><!-- col end-->
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
+                        <div class="error-container"></div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-name" placeholder="First Name" name="firstname" id="f-name"
-                                               type="text" required>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-name" placeholder="First Name"
+                                           name="firstname" id="f-name"
+                                           type="text" required
+                                           value="<%= data.firstName ? data.firstName : '' %>"
+                                    />
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-name" placeholder="Last Name" name="lastname" id="l-name"
-                                               type="text" required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-name" placeholder="Last Name"
+                                           name="lastname" id="l-name"
+                                           type="text" required
+                                           value="<%= data.lastName ? data.lastName : '' %>"
+                                    />
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-subject" placeholder="Email" type ="email"
-                                               required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Email" type="email"
+                                           required
+                                           value="<%= data.email ? data.email : '' %>"
+                                    />
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-email" placeholder="DOB" name="idcard" id="#"
-                                               type="number" required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-email" placeholder="DOB" name="idcard"
+                                           id="#"
+                                           type="number" required>
                                 </div>
+                            </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-subject" placeholder="Phone" name="phone" id="#"
-                                               required>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Phone" name="phone"
+                                           id="#"
+                                           required>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-subject" placeholder="Address" name="address" id="#"
-                                               required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Address"
+                                           name="address" id="#"
+                                           required>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-subject" placeholder="City" name="City" id="#"
-                                               required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="City" name="City"
+                                           id="#"
+                                           required>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-subject" placeholder="Country" name="country" id="#"
-                                               required>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Country"
+                                           name="country" id="#"
+                                           required>
                                 </div>
+                            </div>
 
 
-
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <label class="control-label" >Category</label>
-                                            <select id="categoryList" class="form-control">
-                                                <option value="owner">Owner</option>
-                                                <option value="player">Player</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <label class="control-label" >Type of membership</label>
-                                            <select id="membershipList" class="form-control">
-                                                <option value="Silver">Silver</option>
-                                                <option value="Gold">Gold</option>
-                                                <option value="Platinum">Platinum</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <label class="control-label" >Session</label>
-                                            <select class="form-control">
-                                                <option value="1">1</option>
-                                                <option value="6">6</option>
-                                                <option value="12">12</option>
-                                                <option value="18">18</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <label class="control-label" >Pricing</label>
-                                            <input class="form-control form-control-subject" placeholder="Price" name="price" id="#"
-                                                   readonly>
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Category</label>
+                                        <select id="categoryList" class="form-control">
+                                            <option value="owner">Owner</option>
+                                            <option value="player">Player</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Type of membership</label>
+                                        <select id="membershipList" class="form-control">
+                                            <option value="Silver">Silver</option>
+                                            <option value="Gold">Gold</option>
+                                            <option value="Platinum">Platinum</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Session</label>
+                                        <select class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="6">6</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Pricing</label>
+                                        <input class="form-control form-control-subject" placeholder="Price"
+                                               name="price" id="#"
+                                               readonly
+                                               value="<%= data.price ? data.price : '' %>"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <br>
-                            <div class="sponsors-wrap">
-                                <div class="row sponsor-padding text-center">
-                                    <!-- Col 1 end -->
-                                    <div class="col-md-6 text-right">
-                                        <a href="#" class="btn"> Edit </a>
-                                    </div>
-                                    <!-- Col 2 end -->
-                                    <div class="col-md-6 text-left">
-                                        <a href="/admin/admin-center" class="btn">Home</a>
-                                    </div>
+                        <div class="sponsors-wrap">
+                            <div class="row sponsor-padding text-center">
+                                <!-- Col 1 end -->
+                                <div class="col-md-6 text-right">
+                                    <a href="#" class="btn"> Edit </a>
+                                </div>
+                                <!-- Col 2 end -->
+                                <div class="col-md-6 text-left">
+                                    <a href="/admin/admin-center" class="btn">Home</a>
                                 </div>
                             </div>
-                    </div>
-
-                    </form><!-- Contract form end -->
+                        </div>
                 </div>
+
+                </form><!-- Contract form end -->
             </div>
-    </div>
-            <div class="speaker-shap">
-                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-            </div>
-        </section>
-                <!-- footer start-->
-                <% include ../partials/footer %>
-                    <!-- Body inner end -->
-    </div>
-    <% include ../partials/footer-script %>
+        </div>
+</div>
+<div class="speaker-shap">
+    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+</div>
+</section>
+<!-- footer start-->
+<% include ../partials/footer %>
+<!-- Body inner end -->
+</div>
+<% include ../partials/footer-script %>
 </body>
 
 </html>

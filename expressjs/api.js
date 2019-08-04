@@ -10,6 +10,8 @@ module.exports = {
     createEmployee: (params = {}, callback) => {
         callapi('/api/v1/create', POST, params, callback);
     },
+
+
     // Real API
     getMemberships: (params = {}, callback) => {
         callapi('/api/views/memberships', GET, params, callback);
@@ -29,5 +31,13 @@ module.exports = {
 
     getYardDetail: (params = {}, callback) => {
         callapi('/api/views/yard/' + params.id, GET, params, callback);
+    },
+
+    getContractList: (params = {}, callback) => {
+        callapi('/api/views/contracts/', GET, params, callback);
+    },
+
+    getContractDetail: (params = {}, callback) => {
+        callapi('/api/views/contract/' + params.id, GET, params, callback);
     },
 };

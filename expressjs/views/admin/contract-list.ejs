@@ -26,9 +26,9 @@
                 </div>
                 <div class="text-center">
                     <ul style="list-style-type:none;">
-                        <li> <a href ="/admin/contract-detail"> Contract 1 </a></li>
-                        <li>  <a href ="/admin/contract-detail"> Contract 2 </a> </li>
-                        <li> <a href ="/admin/contract-detail"> Contract 3 </a></li>
+                        <% contracts.forEach(function(contract){ %>
+                            <li> <a href ="/admin/contract-detail/<%= contract.contractId%>"> Contract: <%= contract.firstName %> <%= contract.lastName %></a></li>
+                        <% }) %>
                     </ul>
                 </div>
                 </div>
