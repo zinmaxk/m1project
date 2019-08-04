@@ -83,6 +83,7 @@ module.exports = {
         });
     },
     ownerYardDetail: (req, res) => {
+        // TODO: need to be authorized
         api.getYardDetail(req.params, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
