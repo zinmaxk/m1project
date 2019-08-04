@@ -48,9 +48,9 @@ module.exports = {
         res.render('owner/owner-report', {"page": page});
     },
     ownerCenterList: (req, res) => {
-        // TODO: need to authorized
+        // TODO: need to be authorized
         api.getCenters({}, function (error, response, body) {
-            centers = processJsonData(body);
+            let centers = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Center List",
                 breadCrumbTitle: "Center List"
@@ -59,18 +59,22 @@ module.exports = {
         });
     },
     ownerCenterDetail: (req, res) => {
-        let id = req.params.id;
+        // TODO: need to be authorized
+        api.getCenterDetail(req.params, function (error, response, body) {
+            let data = processJsonData(body);
 
-        const page = {
-            pageTitle: "OWNER Center Detail",
-            breadCrumbTitle: "Center Detail"
-        }
-        res.render('owner/owner-centerdetail', {"page": page});
+
+            const page = {
+                pageTitle: "OWNER Center Detail",
+                breadCrumbTitle: "Center Detail"
+            };
+            res.render('owner/owner-centerdetail', {"page": page, data: data});
+        });
     },
     ownerYardList: (req, res) => {
-        // TODO: need to authorized
+        // TODO: need to be authorized
         api.getYards({}, function (error, response, body) {
-            yards = processJsonData(body);
+            let yards = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Yard List",
                 breadCrumbTitle: "Yard List"
@@ -79,12 +83,14 @@ module.exports = {
         });
     },
     ownerYardDetail: (req, res) => {
-        let id = req.params.id;
-        const page = {
-            pageTitle: "OWNER Yard Detail",
-            breadCrumbTitle: "Yard Detail"
-        }
-        res.render('owner/owner-yarddetail', {"page": page});
+        api.getYardDetail(req.params, function (error, response, body) {
+            let data = processJsonData(body);
+            const page = {
+                pageTitle: "OWNER Yard Detail",
+                breadCrumbTitle: "Yard Detail"
+            };
+            res.render('owner/owner-yarddetail', {page: page, data: data});
+        });
     }
 
 }
