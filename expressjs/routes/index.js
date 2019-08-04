@@ -2,7 +2,7 @@
 //
 const routesAdmin = require('./admin');
 const routesOwner = require('./owner');
-const routesUser = require('./user');
+const routesUser = require('./player');
 const controller = require('../controllers/index')
 
 const api = require('../api');

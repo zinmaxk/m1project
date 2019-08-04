@@ -1,10 +1,10 @@
 //
 //
-const controller = require('../controllers/users');
+const controller = require('../controllers/players');
 const validateToken = require('../helper/utils').validateToken;
 
 module.exports = (router) => {
-    router.route('/user/login').get(function(req, res) {
+    router.route('/user/login').get(function (req, res) {
         res.redirect("/login");
     });
     router.route('/user/login').post(controller.userLogin);
