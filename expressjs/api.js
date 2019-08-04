@@ -28,6 +28,6 @@ module.exports = {
     },
 
     getYardDetail: (params = {}, callback) => {
-        callapi('/api/yard/' + params.id, GET, params, callback);
+        callapi('/api/views/yard/' + params.id, GET, params, callback);
     },
 };
