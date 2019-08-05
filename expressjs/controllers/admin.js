@@ -2,12 +2,12 @@ const api = require('../api');
 const processJsonData = require('../helper/utils').processJsonData;
 
 module.exports = {
-    adminCenter: (req, res) => {
+    adminZone: (req, res) => {
         const page = {
-            pageTitle: "Admin CENTER",
-            breadCrumbTitle: "Admin center"
+            pageTitle: "ADMIN ZONE",
+            breadCrumbTitle: "Admin zone"
         }
-        res.render('admin/admin-center', {"page": page});
+        res.render('admin/admin-zone', {"page": page});
     },
     adminReport: (req, res) => {
         const page = {

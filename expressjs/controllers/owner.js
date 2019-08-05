@@ -4,13 +4,13 @@ const api = require('../api');
 const processJsonData = require('../helper/utils').processJsonData;
 
 module.exports = {
-    ownerCenter: (req, res) => {
+    ownerZone: (req, res) => {
         // NEW CODE
         const page = {
             pageTitle: "OWNER CENTER",
-            breadCrumbTitle: "Owner center"
+            breadCrumbTitle: "Owner Zone"
         }
-        res.render('owner/owner-center', {"page": page});
+        res.render('owner/owner-zone', {"page": page});
     },
     ownerBookingCenter: (req, res) => {
         const page = {

@@ -20,8 +20,8 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="section-title text-center">
-                        <span> Contract detail </span>
-                        <%= data.firstName %> <%= data.flastName %>
+                        <span> Contract detail  <%= data.contractId %>  </span>
+                        <%= data.firstName %> <%= data.lastName %>
                     </h2>
                 </div><!-- col end-->
             </div>
@@ -31,107 +31,133 @@
                         <div class="error-container"></div>
 
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-name" placeholder="First Name"
-                                           name="firstname" id="f-name"
-                                           type="text" required
-                                           value="<%= data.firstName ? data.firstName : '' %>"
-                                    />
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">First Name</label>
+                                        <input class="form-control form-control-name" placeholder="First Name"
+                                               name="firstname" id="f-name"
+                                               type="text" readonly
+                                               value="<%= data.firstName ? data.firstName : '' %>"/>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-name" placeholder="Last Name"
-                                           name="lastname" id="l-name"
-                                           type="text" required
-                                           value="<%= data.lastName ? data.lastName : '' %>"
-                                    />
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Last Name</label>
+                                        <input class="form-control form-control-name" placeholder="Last Name"
+                                               name="lastname" id="l-name"
+                                               type="text" readonly
+                                               value="<%= data.lastName ? data.lastName : '' %>"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Email" type="email"
-                                           required
-                                           value="<%= data.email ? data.email : '' %>"
-                                    />
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Email</label>
+                                        <input class="form-control form-control-subject" placeholder="Email"
+                                               type="email"
+                                               readonly
+                                               value="<%= data.email ? data.email : '' %>"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-email" placeholder="DOB" name="idcard"
-                                           id="#"
-                                           type="number" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Phone" name="phone"
-                                           id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Address"
-                                           name="address" id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="City" name="City"
-                                           id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Country"
-                                           name="country" id="#"
-                                           required>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">DOB</label>
+                                        <input class="form-control form-control-email" placeholder="DOB"
+                                               id="#"
+                                               type="number" readonly>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Phone</label>
+                                        <input class="form-control form-control-subject" placeholder="Phone"
+                                               name="phone"
+                                               id="#"
+                                               readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Address</label>
+                                        <input class="form-control form-control-subject" placeholder="Address"
+                                               name="address" id="#"
+                                               readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">City</label>
+                                        <input class="form-control form-control-subject" placeholder="City" name="City"
+                                               id="#"
+                                               readonly>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Country</label>
+                                        <input class="form-control form-control-subject" placeholder="Country"
+                                               name="country" id="#"
+                                               readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6" style="padding-bottom: 30px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Category</label>
-                                        <select id="categoryList" class="form-control">
-                                            <option value="owner">Owner</option>
-                                            <option value="player">Player</option>
-                                        </select>
+                                        <input class="form-control form-control-subject" placeholder="Price"
+                                               name="price" id="#"
+                                               readonly
+                                               value="<%= data.membershipType ? data.membershipType : '' %>"
+                                        />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 30px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Type of membership</label>
-                                        <select id="membershipList" class="form-control">
-                                            <option value="Silver">Silver</option>
-                                            <option value="Gold">Gold</option>
-                                            <option value="Platinum">Platinum</option>
-                                        </select>
+                                        <input class="form-control form-control-subject" placeholder="Price"
+                                               name="price" id="#"
+                                               readonly
+                                               value="<%= data.cardLevel ? data.cardLevel : '' %>"
+                                        />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 30px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Session</label>
-                                        <select class="form-control">
-                                            <option value="1">1</option>
-                                            <option value="6">6</option>
-                                            <option value="12">12</option>
-                                            <option value="18">18</option>
-                                        </select>
+                                        <input class="form-control form-control-subject" placeholder="Price"
+                                               name="price" id="#"
+                                               readonly
+                                               value="<%= data.session ? data.session : '' %>"
+                                        />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 30px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Pricing</label>
@@ -139,6 +165,28 @@
                                                name="price" id="#"
                                                readonly
                                                value="<%= data.price ? data.price : '' %>"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Start Date</label>
+                                        <input class="form-control form-control-subject" placeholder="Start Date"
+                                               readonly
+                                               value="<%= data.startDate ? data.startDate : '' %>"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">End Date</label>
+                                        <input class="form-control form-control-subject" placeholder="End Date"
+                                               readonly
+                                               value="<%= data.endDate ? data.endDate : '' %>"
                                         />
                                     </div>
                                 </div>
@@ -153,7 +201,7 @@
                                 </div>
                                 <!-- Col 2 end -->
                                 <div class="col-md-6 text-left">
-                                    <a href="/admin/admin-center" class="btn">Home</a>
+                                    <a href="/admin/admin-zone" class="btn">Home</a>
                                 </div>
                             </div>
                         </div>
