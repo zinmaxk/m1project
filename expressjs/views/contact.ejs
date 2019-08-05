@@ -6,53 +6,57 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ./partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ./partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-                <section class="text-center">
-                    <div class="container">
-                        <div class="row text-center">
-                            <div class="col-lg-4 mx-auto">
-                                <h2 class="section-title text-center">
-                                    <span> We're here for you </span>
-                                    Contact Us
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ./partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ./partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <section class="text-center">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-4 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> We're here for you </span>
+                        Contact Us
 
-                                </h2>
-                            </div>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1">
+                    <form method="POST" action="">
+                        <div class="col-lg-6 mx-auto form-group">
+                            <input type="text" class="form-control" id="fname" name="fname" placeholder="Full name"
+                                   required>
                         </div>
-                    <div class="row">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1">
-                            <form method="POST" action="">
-                                <div class="col-lg-6 mx-auto form-group">
-                                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Full name" required>
-                                </div>
-                                <div class="col-lg-6 mx-auto form-group">
-                                    <input type="email" class="form-control" id="email" type ="email" name="email" placeholder="Email" required>
-                                </div>
-                                <div class="col-lg-6 mx-auto form-group">
-                                    <input type="tel" class="form-control" id="phone" type ="number" name="phone" placeholder="Phone" required>
-                                </div>
-                                <div class="col-lg-6 mx-auto form-group">
-                                    <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Please put your comment"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
+                        <div class="col-lg-6 mx-auto form-group">
+                            <input type="email" class="form-control" id="email" type="email" name="email"
+                                   placeholder="Email" required>
                         </div>
-                        </row>
-                </section>
+                        <div class="col-lg-6 mx-auto form-group">
+                            <input type="tel" class="form-control" id="phone" type="number" name="phone"
+                                   placeholder="Phone" required>
+                        </div>
+                        <div class="col-lg-6 mx-auto form-group">
+                            <textarea class="form-control" id="comment" name="comment" rows="3"
+                                      placeholder="Please put your comment"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                </row>
+    </section>
 
-                <!-- footer start-->
-                <% include ./partials/footer %>
-                    <!-- Body inner end -->
-    </div>
-    <% include ./partials/footer-script %>
+    <!-- footer start-->
+    <% include ./partials/footer %>
+    <!-- Body inner end -->
+</div>
+<% include ./partials/footer-script %>
 </body>
 
 </html>

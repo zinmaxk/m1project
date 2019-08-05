@@ -6,68 +6,68 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ./partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ./partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-                <section class="ts-schedule">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="section-title">
-                                    On First Day
-                                </h2>
-                            </div>
-                            <!-- col end-->
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="tab-content schedule-tabs">
-                                    <div role="tabpanel" class="tab-pane active">
-                                        <% scheduleList.forEach(function(schedule) { %>
-                                            <div class="schedule-listing">
-                                                <div class="schedule-slot-time">
-                                                    <span> <%= schedule.time %></span> Workshop
-                                                </div>
-                                                <div class="schedule-slot-info">
-                                                    <a href="#">
-                                                        <img class="schedule-slot-speakers" src="<%= schedule.thumbnail %>" alt="">
-                                                    </a>
-                                                    <div class="schedule-slot-info-content">
-                                                        <h3 class="schedule-slot-title">
-                                                            <a href="booking-form.html">
-                                                                <%= schedule.title %>
-                                                            </a>
-                                                            <strong>@ <%= schedule.location %></strong>
-                                                        </h3>
-                                                        <p>
-                                                            <%= schedule.brief %>
-                                                        </p>
-                                                    </div>
-                                                    <!--Info content end -->
-                                                </div>
-                                                <!-- Slot info end -->
-                                            </div>
-                                            <% }); %>
-                                                <!--schedule-listing end -->
-                                                <div class="schedule-listing-btn">
-                                                    <a href="#" class="btn">More Details</a>
-                                                </div>
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ./partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ./partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <section class="ts-schedule">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title">
+                        On First Day
+                    </h2>
+                </div>
+                <!-- col end-->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab-content schedule-tabs">
+                        <div role="tabpanel" class="tab-pane active">
+                            <% scheduleList.forEach(function(schedule) { %>
+                                <div class="schedule-listing">
+                                    <div class="schedule-slot-time">
+                                        <span> <%= schedule.time %></span> Workshop
                                     </div>
+                                    <div class="schedule-slot-info">
+                                        <a href="#">
+                                            <img class="schedule-slot-speakers" src="<%= schedule.thumbnail %>" alt="">
+                                        </a>
+                                        <div class="schedule-slot-info-content">
+                                            <h3 class="schedule-slot-title">
+                                                <a href="booking-form.html">
+                                                    <%= schedule.title %>
+                                                </a>
+                                                <strong>@ <%= schedule.location %></strong>
+                                            </h3>
+                                            <p>
+                                                <%= schedule.brief %>
+                                            </p>
+                                        </div>
+                                        <!--Info content end -->
+                                    </div>
+                                    <!-- Slot info end -->
                                 </div>
+                            <% }); %>
+                            <!--schedule-listing end -->
+                            <div class="schedule-listing-btn">
+                                <a href="#" class="btn">More Details</a>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- footer start-->
-                <% include ./partials/footer %>
-                    <!-- Body inner end -->
-    </div>
-    <% include ./partials/footer-script %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer start-->
+    <% include ./partials/footer %>
+    <!-- Body inner end -->
+</div>
+<% include ./partials/footer-script %>
 </body>
 
 </html>

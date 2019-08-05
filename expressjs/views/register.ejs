@@ -6,109 +6,117 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ./partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ./partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-                <! Registration form !>
-                <section class="ts-contact-form">
-                    <div class="container">
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ./partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ./partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <! Registration form !>
+    <section class="ts-contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> Are you ready to become our member?</span> Register now
+                    </h2>
+                </div>
+                <!-- col end-->
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-form" class="contact-form" action="/user/user-register" method="post">
+                        <div class="error-container"></div>
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="section-title text-center">
-                                    <span> Are you ready to become our member?</span> Register now
-                                </h2>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-name" placeholder="First Name" name="name"
+                                           id="firstname" type="text" required>
+                                </div>
                             </div>
-                            <!-- col end-->
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <form id="contact-form" class="contact-form" action="/user/user-register" method="post">
-                                    <div class="error-container"></div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-name" placeholder="First Name" name="name" id="firstname" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-name" placeholder="Last Name" name="name" id="lastname" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-subject" placeholder="Email" name="email" id="personalemail" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-email" placeholder="Phone" name="phone" id="personalphone" type="email" required>
-                                            </div>
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-name" placeholder="Last Name" name="name"
+                                           id="lastname" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Email" name="email"
+                                           id="personalemail" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-email" placeholder="Phone" name="phone"
+                                           id="personalphone" type="email" required>
+                                </div>
+                            </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-email" placeholder="Contract Number" name="contractno" id="contractnumber" type="text">
-                                            </div>
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-email" placeholder="Contract Number"
+                                           name="contractno" id="contractnumber" type="text">
+                                </div>
+                            </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-subject" placeholder="Username" name="username" id="username" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-email" placeholder="Password" name="password" id="password" type="password" required>
-                                            </div>
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-subject" placeholder="Username"
+                                           name="username" id="username" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-email" placeholder="Password"
+                                           name="password" id="password" type="password" required>
+                                </div>
+                            </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control form-control-email" placeholder="Re-enter password" name="password" id="password" type="password" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="checkbox" for="checkrole" id='checkrole'>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control form-control-email" placeholder="Re-enter password"
+                                           name="password" id="password" type="password" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="checkbox" for="checkrole" id='checkrole'>
                                     <input type="checkbox"/> I'm yard owner.
                                 </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="text-left">
-                                        <label class="checkbox" for="termandcondition" id="termandcondition">
-                                    <input type="checkbox"/> I agree with <a href="#">terms of service</a> 
-                                </label>
-                                    </div>
-
-                                    <div class="text-center"><br>
-                                        <a href="#" class="btn ladda-button" data-style="expand-left"><span class="ladda-label">Register</span></a>
-                                    </div>
-
-                                    <div class="text-center"> <br>
-                                        <p> <a href="/Login">Already have account? </p></a>
-                                    </div>
                             </div>
-
-                            </form>
-                            <!-- Contact form end -->
                         </div>
-                    </div>
-    </div>
-    <div class="speaker-shap">
-        <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-    </div>
-    </section>
-    <!-- footer start-->
-    <% include ./partials/footer %>
-        <!-- Body inner end -->
+
+                        <div class="text-left">
+                            <label class="checkbox" for="termandcondition" id="termandcondition">
+                                <input type="checkbox"/> I agree with <a href="#">terms of service</a>
+                            </label>
+                        </div>
+
+                        <div class="text-center"><br>
+                            <a href="#" class="btn ladda-button" data-style="expand-left"><span class="ladda-label">Register</span></a>
+                        </div>
+
+                        <div class="text-center"><br>
+                            <p><a href="/Login">Already have account?</p></a>
+                        </div>
+                </div>
+
+                </form>
+                <!-- Contact form end -->
+            </div>
         </div>
-        <% include ./partials/footer-script %>
+</div>
+<div class="speaker-shap">
+    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+</div>
+</section>
+<!-- footer start-->
+<% include ./partials/footer %>
+<!-- Body inner end -->
+</div>
+<% include ./partials/footer-script %>
 </body>
 
 </html>

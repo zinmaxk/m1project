@@ -39,45 +39,45 @@
         </div>
 
 
-
         <div class="text-decoration: line-through;">
 
-        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span> List of yard </span>
+                            Yard
+                        </h2>
+                    </div><!-- col end-->
+                </div>
+
+            </div>
+            <div class="speaker-shap">
+                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            </div>
+
+
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center">
-                        <span> List of yard </span>
-                        Yard
-                    </h2>
-                </div><!-- col end-->
-            </div>
-
-        </div>
-        <div class="speaker-shap">
-            <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-        </div>
-
-
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="error-container"></div>
-                <div class="row">
-                    <% yards.forEach(function (yard) { %>
-                        <div class="col-md-6" style="padding-bottom: 30px;">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p><a href="/owner/owner-yarddetail/<%= yard.yard_id %>"> <%= yard.yard_name %> </a>
-                                    </p>
-                                    <p> Sport name: <%= yard.sport_name %> </p>
-                                    <p> Yard Phone: <%= yard.phone %> </p>
-                                    <p> Yard City: <%= yard.city %> </p>
+                    <div class="error-container"></div>
+                    <div class="row">
+                        <% yards.forEach(function (yard) { %>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p>
+                                            <a href="/owner/owner-yarddetail/<%= yard.yard_id %>"> <%= yard.yard_name %> </a>
+                                        </p>
+                                        <p> Sport name: <%= yard.sport_name %> </p>
+                                        <p> Yard Phone: <%= yard.phone %> </p>
+                                        <p> Yard City: <%= yard.city %> </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <% }) %>
+                        <% }) %>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
     </section>

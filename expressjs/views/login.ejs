@@ -6,61 +6,64 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ./partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ./partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-                <section class="text-center">
-                    <! Login form !>
-                    <section class="ts-contact-form">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8 mx-auto">
-                                    <h2 class="section-title text-center">
-                                        <span> Do you have account already?</span> Login now
-                                    </h2>
-                                </div>
-                                <!-- col end-->
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-8 mx-auto">
-                                    <form id="contact-form" class="contact-form" action="/user/login" method="post">
-                                        <div class="error-container"></div>
-                                        <div class="center" class="row">
-                                            <div class="center">
-                                                <div class="form-group">
-                                                    <input class="form-control form-control-name" placeholder="Username" name="userName" id="username" type="text" required>
-                                                </div>
-                                            </div>
-                                            <div class="center">
-                                                <div class="form-group">
-                                                    <input class="form-control form-control-name" placeholder="Password" name="password" id="password" type="password" required>
-                                                </div>
-                                            </div>
-                                            <div class="text-center"><br>
-                                                <button class="btn ladda-button" data-style="expand-left" type="submit"> Login </button>
-                                            </div>
-                                    </form>
-                                    <!-- Login form end -->
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ./partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ./partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <section class="text-center">
+        <! Login form !>
+        <section class="ts-contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span> Do you have account already?</span> Login now
+                        </h2>
+                    </div>
+                    <!-- col end-->
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <form id="contact-form" class="contact-form" action="/user/login" method="post">
+                            <div class="error-container"></div>
+                            <div class="center" class="row">
+                                <div class="center">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Username"
+                                               name="userName" id="username" type="text" required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="speaker-shap">
-                                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-                            </div>
-                    </section>
-
-                </section>
-
-                <!-- footer start-->
-                <% include ./partials/footer %>
-                    <!-- Body inner end -->
+                                <div class="center">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-name" placeholder="Password"
+                                               name="password" id="password" type="password" required>
+                                    </div>
+                                </div>
+                                <div class="text-center"><br>
+                                    <button class="btn ladda-button" data-style="expand-left" type="submit"> Login
+                                    </button>
+                                </div>
+                        </form>
+                        <!-- Login form end -->
                     </div>
-                    <% include ./partials/footer-script %>
+                </div>
+            </div>
+            <div class="speaker-shap">
+                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            </div>
+        </section>
+
+    </section>
+
+    <!-- footer start-->
+    <% include ./partials/footer %>
+    <!-- Body inner end -->
+</div>
+<% include ./partials/footer-script %>
 </body>
 
 </html>

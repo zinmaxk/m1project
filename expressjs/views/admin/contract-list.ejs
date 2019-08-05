@@ -6,61 +6,62 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <!-- Header start -->
-        <% include ../partials/header %>
-            <!--/ Header end -->
-            <!-- Banner start -->
-            <% include ../partials/banner %>
-                <!-- Banner end -->
-                <!-- ts Content start -->
-        <section class="ts-contact-form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="section-title text-center">
-                            <span> List of contract </span>
-                            Contract
-                        </h2>
-                    </div><!-- col end-->
-                </div>
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ../partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ../partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <section class="ts-contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> List of contract </span>
+                        Contract
+                    </h2>
+                </div><!-- col end-->
+            </div>
 
 
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="error-container"></div>
-                        <div class="row">
-                            <% contracts.forEach(function(contract){ %>
-                                <div class="col-md-6" style="padding-bottom: 30px;">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p><a href="/admin/contract-detail/<%= contract.contractId%>">Contract: <%= contract.contractId %></a>
-                                            </p>
-                                            <p> Full name:  <%= contract.firstName %>  <%= contract.lastName %>   </p>
-                                            <p> Membership type:  <%= contract.membershipType %>  </p>
-                                            <p> Card level:  <%= contract.cardLevel %>  </p>
-                                            <p> Created by:  <%= contract.createBy %>  </p>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="error-container"></div>
+                    <div class="row">
+                        <% contracts.forEach(function(contract){ %>
+                            <div class="col-md-6" style="padding-bottom: 30px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p>
+                                            <a href="/admin/contract-detail/<%= contract.contractId %>">Contract: <%= contract.contractId %></a>
+                                        </p>
+                                        <p> Full name: <%= contract.firstName %>  <%= contract.lastName %>   </p>
+                                        <p> Membership type: <%= contract.membershipType %>  </p>
+                                        <p> Card level: <%= contract.cardLevel %>  </p>
+                                        <p> Created by: <%= contract.createBy %>  </p>
 
-                                        </div>
                                     </div>
                                 </div>
-                            <% }) %>
-                        </div>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
+            </div>
 
-                </div>
-            </div>
-            </div>
-            <div class="speaker-shap">
-                <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-            </div>
-        </section>
-                <!-- footer start-->
-                <% include ../partials/footer %>
-                    <!-- Body inner end -->
-    </div>
-    <% include ../partials/footer-script %>
+        </div>
+</div>
+</div>
+<div class="speaker-shap">
+    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+</div>
+</section>
+<!-- footer start-->
+<% include ../partials/footer %>
+<!-- Body inner end -->
+</div>
+<% include ../partials/footer-script %>
 </body>
 
 </html>

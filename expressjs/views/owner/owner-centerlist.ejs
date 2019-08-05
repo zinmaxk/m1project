@@ -30,47 +30,47 @@
                 <div class="row text-center">
                     <div class="col-lg-4 mx-auto">
                         <h2 class="section-title text-center">
-                        <a href="/owner/owner-centercreation" class="btn"> Create new Center </a>
+                            <a href="/owner/owner-centercreation" class="btn"> Create new Center </a>
                     </div>
                 </div>
             </div>
         </div>
 
-    <section class="ts-contact-form">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center">
-                        <span> List of center </span>
-                        Center
-                    </h2>
-                </div><!-- col end-->
-            </div>
+        <section class="ts-contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span> List of center </span>
+                            Center
+                        </h2>
+                    </div><!-- col end-->
+                </div>
 
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="error-container"></div>
-                    <div class="row">
-                        <% centers.forEach(function(center) { %>
-                            <div class="col-md-6" style="padding-bottom: 30px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p><a href="/owner/owner-centerdetail/<%= center.id%>"> <%= center.name %> </a>
-                                        </p>
-                                        <p> Time Open: <%= center.timeOpen %> </p>
-                                        <p> Time Close: <%= center.timeClose %> </p>
-                                        <p> Center City: <%= center.city %> </p>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="error-container"></div>
+                        <div class="row">
+                            <% centers.forEach(function(center) { %>
+                                <div class="col-md-6" style="padding-bottom: 30px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>
+                                                <a href="/owner/owner-centerdetail/<%= center.id %>"> <%= center.name %> </a>
+                                            </p>
+                                            <p> Time Open: <%= center.timeOpen %> </p>
+                                            <p> Time Close: <%= center.timeClose %> </p>
+                                            <p> Center City: <%= center.city %> </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <% }) %>
+                            <% }) %>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
-
-
-
-        </div>
 </div>
 </div>
 <div class="speaker-shap">
