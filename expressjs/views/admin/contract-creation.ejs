@@ -28,79 +28,101 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
-                        <div class="error-container"></div>
-
+                        <div class="error-container">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-name" placeholder="First Name"
-                                           name="firstname" id="f-name"
-                                           type="text" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-name" placeholder="Last Name"
-                                           name="lastname" id="l-name"
-                                           type="text" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Email" type="email"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-email" placeholder="DOB" name="idcard"
-                                           id="#"
-                                           type="number" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Phone" name="phone"
-                                           id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Address"
-                                           name="address" id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="City" name="City"
-                                           id="#"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control form-control-subject" placeholder="Country"
-                                           name="country" id="#"
-                                           required>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="card">
                                     <div class="card-body">
-                                        <label class="control-label">Category</label>
-                                        <select id="categoryList" class="form-control">
+                                        <label class="control-label">First Name</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="First Name" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Last Name</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="First Name" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Email</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="Email" type="email"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">DOB</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="DOB" type="date"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Phone Number </label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="Phone Number" type="number"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Address</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="Address" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">City</label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="City" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Country </label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="Country" type="text"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Category </label>
+                                        <select id="categoryList" class="form-control" >
                                             <option value="owner">Owner</option>
                                             <option value="player">Player</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Type of membership</label>
@@ -112,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Session</label>
@@ -121,18 +143,16 @@
                                             <option value="6">6</option>
                                             <option value="12">12</option>
                                             <option value="18">18</option>
-
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="card">
                                     <div class="card-body">
-                                        <label class="control-label">Pricing</label>
-                                        <input class="form-control form-control-subject" placeholder="Price"
-                                               name="price" id="#"
-                                               readonly>
+                                        <label class="control-label">Price </label>
+                                        <input class="form-control form-control-subject"
+                                               placeholder="Price will be automatically generated" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +172,7 @@
                             </div>
                         </section>
                 </div>
-
+            </div>
                 </form><!-- Contract form end -->
             </div>
         </div>
