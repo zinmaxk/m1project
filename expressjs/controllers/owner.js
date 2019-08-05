@@ -2,6 +2,7 @@
 //
 const api = require('../api');
 const processJsonData = require('../helper/utils').processJsonData;
+const bodyParser = require('body-parser');
 
 module.exports = {
     ownerZone: (req, res) => {
@@ -20,11 +21,45 @@ module.exports = {
         res.render('owner/owner-booking-center', {"page": page});
     },
     ownerCenterCreate: (req, res) => {
+        let data = {
+            name: '',
+            website: '',
+            phone: '',
+            address: '',
+            city: '',
+            country: '',
+            openTime: '',
+            closeTime: ''
+        };
+
         const page = {
             pageTitle: "OWNER CENTER CREATION",
             breadCrumbTitle: "Owner Center Creation"
+        };
+
+        if (req.method == 'POST') {
+            // API create
+            data = {
+                ownerId: 6, //TODO: hardcode as authorized user
+                category: 3, //TODO: hardcode as authorized user,
+                status: 1, //TODO: hardcode as authorized user,
+                name: req.body.centerName,
+                website: req.body.website,
+                phone: req.body.phone,
+                address: req.body.address,
+                city: req.body.city,
+                country: req.body.country,
+                openTime: req.body.openTime,
+                closeTime: req.body.closeTime
+            };
+
+            api.createCenter(data, function (error, response, body) {
+                console.log(error, response, body);
+                res.render('owner/owner-centercreation', {page: page, data: data, message: 'Create center has successful!'});
+            });
+            return;
         }
-        res.render('owner/owner-centercreation', {"page": page});
+        res.render('owner/owner-centercreation', {page: page, data: data});
     },
     ownerYardCreate: (req, res) => {
         const page = {

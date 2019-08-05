@@ -40,4 +40,8 @@ module.exports = {
     getContractDetail: (params = {}, callback) => {
         callapi('/api/views/contract/' + params.id, GET, params, callback);
     },
+
+    createCenter: (params = {}, callback) => {
+        callapi('/api/center/', POST, params, callback);
+    }
 };
