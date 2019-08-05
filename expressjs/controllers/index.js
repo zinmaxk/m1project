@@ -22,10 +22,10 @@ module.exports = {
             var scheduleList = [];
             var sample = {
                 time: "12:00 - 15:00",
-                thumbnail: "/images/speakers/speaker1.jpg",
-                title: "My title ",
-                location: "Bean",
-                brief: "How you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge. How you transform "
+                thumbnail: "/images/speakers/speaker3.jpg",
+                title: "Yoga Stretch",
+                location: "New York",
+                brief: "Bring your knees over your hips, shins parallel to the bed, put your arms out wide, and slowly drop your knees to one side as you gaze over the opposite shoulder. Keep your shoulders grounded on your bed and breathe as you allow your hips and low back to awaken even more in this stretch."
             }
             for (let index = 0; index < 10; index++) {
                 scheduleList.push(Object.assign({}, sample, {
