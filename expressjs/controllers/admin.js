@@ -3,11 +3,17 @@ const processJsonData = require('../helper/utils').processJsonData;
 
 module.exports = {
     adminZone: (req, res) => {
+        let params = {id: 1} // Hard code for testing
         const page = {
             pageTitle: "ADMIN ZONE",
             breadCrumbTitle: "Admin zone"
-        }
-        res.render('admin/admin-zone', {"page": page});
+        };
+
+        api.getUserInfo(params, function (error, response, body) {
+            let data = processJsonData(body);
+            console.log(data);
+            res.render('admin/admin-zone', {page: page, data: data});
+        });
     },
     adminReport: (req, res) => {
         const page = {
@@ -32,7 +38,7 @@ module.exports = {
     },
     contractDetail: (req, res) => {
         // TODO: need to be authorized
-        api.getContractDetail(req.params, function (error, response, body){
+        api.getContractDetail(req.params, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
                 pageTitle: "Contract Detail",

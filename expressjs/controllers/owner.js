@@ -54,7 +54,7 @@ module.exports = {
             };
 
             api.createCenter(data, function (error, response, body) {
-                console.log(error, response, body);
+                console.log(data, error, response, body);
                 res.render('owner/owner-centercreation', {page: page, data: data, message: 'Create center has successful!'});
             });
             return;

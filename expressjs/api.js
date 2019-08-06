@@ -43,5 +43,9 @@ module.exports = {
 
     createCenter: (params = {}, callback) => {
         callapi('/api/center/', POST, params, callback);
-    }
+    },
+
+    getUserInfo: (params = {}, callback) => {
+        callapi('/api/userAccount/' + params.id, GET, params, callback);
+    },
 };
