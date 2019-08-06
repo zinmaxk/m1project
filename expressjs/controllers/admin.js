@@ -1,9 +1,10 @@
 const api = require('../api');
 const processJsonData = require('../helper/utils').processJsonData;
+const convertServerDateToString = require('../helper/utils').convertServerDateToString;
 
 module.exports = {
     adminZone: (req, res) => {
-        let params = {id: 1} // Hard code for testing
+        let params = {id: 1}; // Hard code for testing
         const page = {
             pageTitle: "ADMIN ZONE",
             breadCrumbTitle: "Admin zone"
@@ -11,8 +12,7 @@ module.exports = {
 
         api.getUserInfo(params, function (error, response, body) {
             let data = processJsonData(body);
-            console.log(data);
-            res.render('admin/admin-zone', {page: page, data: data});
+            res.render('admin/admin-zone', {page: page, data: data, convertDateToString: convertServerDateToString});
         });
     },
     adminReport: (req, res) => {

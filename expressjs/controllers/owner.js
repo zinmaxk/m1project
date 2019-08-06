@@ -2,16 +2,19 @@
 //
 const api = require('../api');
 const processJsonData = require('../helper/utils').processJsonData;
-const bodyParser = require('body-parser');
+const convertServerDateToString = require('../helper/utils').convertServerDateToString;
 
 module.exports = {
     ownerZone: (req, res) => {
-        // NEW CODE
+        let params = {id: 6}; // Hard code for testing
         const page = {
             pageTitle: "OWNER CENTER",
             breadCrumbTitle: "Owner Zone"
-        }
-        res.render('owner/owner-zone', {"page": page});
+        };
+        api.getUserInfo(params, function (error, response, body) {
+            let data = processJsonData(body);
+            res.render('owner/owner-zone', {page: page, data: data, convertDateToString: convertServerDateToString});
+        });
     },
     ownerBookingCenter: (req, res) => {
         const page = {
@@ -54,8 +57,7 @@ module.exports = {
             };
 
             api.createCenter(data, function (error, response, body) {
-                console.log(data, error, response, body);
-                res.render('owner/owner-centercreation', {page: page, data: data, message: 'Create center has successful!'});
+                res.render('owner/owner-centercreation', {page: page, data: data, message: ''});
             });
             return;
         }

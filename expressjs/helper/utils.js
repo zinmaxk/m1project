@@ -36,5 +36,15 @@ module.exports = {
         }
 
         return data;
-    }
+    },
+    convertServerDateToString: (data) => {
+        if (!data || !Array.isArray(data))
+            return '';
+
+        let year = data[0];
+        let month = data[1] < 10 ? '0' + data[1] : data[1];
+        let day = data[2] < 10 ? '0' + data[2] : data[2];
+
+        return year + '-' + month + '-' + day;
+    },
 };

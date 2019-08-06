@@ -23,7 +23,7 @@
                     <div class="col-lg-4 mx-auto">
                         <h2 class="section-title text-center">
                             <span>Personal information</span>
-                            Admin
+                            Owner
                         </h2>
                     </div>
                 </div>
@@ -34,7 +34,9 @@
                         <div class="card-body">
                             <label class="control-label">First name</label>
                             <input class="form-control form-control-subject" placeholder="First name"
-                                   required>
+                                   required
+                                   value="<%= data && data.firstName ? data.firstName : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -45,7 +47,9 @@
                         <div class="card-body">
                             <label class="control-label">Last name</label>
                             <input class="form-control form-control-subject" placeholder="Last name"
-                                   required>
+                                   required type="text"
+                                   value="<%= data && data.lastName ? data.lastName : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -56,7 +60,9 @@
                         <div class="card-body">
                             <label class="control-label">DOB</label>
                             <input class="form-control form-control-subject" placeholder="DOB"
-                                   required>
+                                   required type="date"
+                                   value="<%= convertDateToString(data.dateOfBirth) %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -67,7 +73,9 @@
                         <div class="card-body">
                             <label class="control-label">Phone Number</label>
                             <input class="form-control form-control-subject" placeholder="Phone Number"
-                                   required>
+                                   required type="tel"
+                                   value="<%= data && data.phoneNumber ? data.phoneNumber : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -78,7 +86,9 @@
                         <div class="card-body">
                             <label class="control-label">Address</label>
                             <input class="form-control form-control-subject" placeholder="Address"
-                                   required>
+                                   required type="text"
+                                   value="<%= data && data.address ? data.address : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -89,7 +99,9 @@
                         <div class="card-body">
                             <label class="control-label">City</label>
                             <input class="form-control form-control-subject" placeholder="City"
-                                   required>
+                                   required type="text"
+                                   value="<%= data && data.city ? data.city : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
@@ -100,7 +112,9 @@
                         <div class="card-body">
                             <label class="control-label">Country</label>
                             <input class="form-control form-control-subject" placeholder="Country"
-                                   required>
+                                   required type="text"
+                                   value="<%= data && data.country ? data.country : '' %>"
+                            />
                         </div>
                     </div>
                 </div>
