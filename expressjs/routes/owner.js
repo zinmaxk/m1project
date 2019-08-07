@@ -11,16 +11,16 @@ module.exports = (router) => {
         .get(controller.ownerReport);
     router.route('/owner/owner-centercreation')
         .get(controller.ownerCenterCreate);
-    router.route('/owner/owner-centercreation')
-        .post(controller.ownerCenterCreate);
-    router.route('/owner/owner-yardcreation')
-        .get(controller.ownerYardCreate);
     router.route('/owner/owner-centerlist')
         .get(controller.ownerCenterList);
     router.route('/owner/owner-centerdetail/:id')
         .get(controller.ownerCenterDetail);
+    router.route('/owner/owner-yardcreation')
+        .get(controller.ownerYardCreate);
     router.route('/owner/owner-yardlist')
         .get(controller.ownerYardList);
     router.route('/owner/owner-yarddetail/:id')
         .get(controller.ownerYardDetail);
+    router.route('/owner/owner-booking-form/:id')
+        .get(controller.ownerBookingform);
 };

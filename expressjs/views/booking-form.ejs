@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+<div class="body-inner">
+    <!-- Header start -->
+    <% include ../partials/header %>
+    <!--/ Header end -->
+    <!-- Banner start -->
+    <% include ../partials/banner %>
+    <!-- Banner end -->
+    <!-- ts Content start -->
+    <section class="ts-contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">
+                        <span> Create new booking </span>
+                        Booking
+                    </h2>
+                </div><!-- col end-->
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-form" class="contact-form" method="post">
+                        <div class="error-container">
+                            <div class="row">
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Username</label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="FUsername" type="text"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Yard Name</label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="Yard Name" type="text"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Center Name</label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="Center Name" type="email"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Schedule date</label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="DOB" type="date"
+                                                   required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Start Time </label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="Phone Number" type="number"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">End Time</label>
+                                            <input class="form-control form-control-subject"
+                                                   placeholder="Address" type="text"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <section>
+                                <div class="sponsors-wrap">
+                                    <div class="row sponsor-padding text-center">
+                                        <!-- Col 1 end -->
+                                        <div class="col-md-6 text-right">
+                                            <a href="#" class="btn"> Confirm </a>
+                                        </div>
+                                        <!-- Col 2 end -->
+                                        <div class="col-md-6 text-left">
+                                            <a href="/admin/admin-contract" class="btn">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                </div>
+                </form><!-- Contract form end -->
+            </div>
+        </div>
+</div>
+<div class="speaker-shap">
+    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+</div>
+</section>
+
+<!-- footer start-->
+<% include ../partials/footer %>
+<!-- Body inner end -->
+</div>
+<% include ../partials/footer-script %>
+</body>
+
+</html>

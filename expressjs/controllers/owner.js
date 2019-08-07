@@ -20,8 +20,15 @@ module.exports = {
         const page = {
             pageTitle: "OWNER BOOKING CENTER",
             breadCrumbTitle: "Owner booking center"
-        }
+        };
         res.render('owner/owner-booking-center', {"page": page});
+    },
+    ownerBookingform: (req, res) => {
+        const page = {
+            pageTitle: "OWNER BOOKING FORM",
+            breadCrumbTitle: "Owner booking form"
+        };
+        res.render('owner/owner-booking-form', {"page": page});
     },
     ownerCenterCreate: (req, res) => {
         let data = {
