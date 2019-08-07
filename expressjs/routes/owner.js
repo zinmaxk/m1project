@@ -1,28 +1,29 @@
 const controller = require('../controllers/owner');
+const requiresLogin = require('../helper/middlewares').requiresLogin;
 
 module.exports = (router) => {
     router.route('/owner/owner-zone')
-        .get(controller.ownerZone);
+        .get(requiresLogin, controller.ownerZone);
     router.route('/owner/owner-booking-center')
-        .get(controller.ownerBookingCenter);
+        .get(requiresLogin, controller.ownerBookingCenter);
     router.route('/owner/owner-member')
-        .get(controller.ownerMember);
+        .get(requiresLogin, controller.ownerMember);
     router.route('/owner/owner-report')
-        .get(controller.ownerReport);
+        .get(requiresLogin, controller.ownerReport);
     router.route('/owner/samplereport')
-        .get(controller.ownerSReport);
+        .get(requiresLogin, controller.ownerSReport);
     router.route('/owner/owner-centercreation')
-        .get(controller.ownerCenterCreate);
+        .get(requiresLogin, controller.ownerCenterCreate);
     router.route('/owner/owner-centerlist')
-        .get(controller.ownerCenterList);
+        .get(requiresLogin, controller.ownerCenterList);
     router.route('/owner/owner-centerdetail/:id')
-        .get(controller.ownerCenterDetail);
+        .get(requiresLogin, controller.ownerCenterDetail);
     router.route('/owner/owner-yardcreation')
-        .get(controller.ownerYardCreate);
+        .get(requiresLogin, controller.ownerYardCreate);
     router.route('/owner/owner-yardlist')
-        .get(controller.ownerYardList);
+        .get(requiresLogin, controller.ownerYardList);
     router.route('/owner/owner-yarddetail/:id')
-        .get(controller.ownerYardDetail);
+        .get(requiresLogin, controller.ownerYardDetail);
     router.route('/owner/owner-booking-form/:id')
-        .get(controller.ownerBookingform);
+        .get(requiresLogin, controller.ownerBookingform);
 };

@@ -5,6 +5,7 @@ const express = require('express')
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const session      = require('express-session');
 
 const app = express();
 const router = express.Router();
@@ -20,6 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.use(session({ secret: 'ksnl_secret_key' }));
 
 if (environment !== 'production') {
     app.use(logger('dev'));

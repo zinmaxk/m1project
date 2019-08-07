@@ -1,5 +1,6 @@
 //
 //
+const routesAuth = require('./auth');
 const routesAdmin = require('./admin');
 const routesOwner = require('./owner');
 const routesUser = require('./player');
@@ -138,6 +139,7 @@ module.exports = (router) => {
         })
     });
 
+    routesAuth(router);
     routesUser(router);
     routesAdmin(router);
     routesOwner(router);

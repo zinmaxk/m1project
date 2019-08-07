@@ -1,21 +1,30 @@
-var request = require('request');
+const request = require('request');
 const server = process.env.API_URL;
+const MULTIPART_FORM_DATA_VALUE = 'application/x-www-form-urlencoded';
+const APPLICATION_JSON_VALUE = 'application/json';
+const CONTENT_TYPE = 'Content-Type';
 let fixedHeaders = {
-    'json': true,
-    'Content-Type': 'application/json; charset=utf-8',
+    'Content-Type': MULTIPART_FORM_DATA_VALUE,
 };
 
 module.exports = function (path, method, body = {}, callBack, newHeaders = {}) {
     const url = server + path;
+    let data = JSON.stringify(body);
     let headers = Object.assign(fixedHeaders, newHeaders);
     const options = {
         method: method,
-        body: JSON.stringify(body),
-        headers: headers
+        url: url,
+        headers: headers,
+        formData: body,
     };
 
+    if (headers[CONTENT_TYPE] == APPLICATION_JSON_VALUE) {
+        delete  options.formData;
+        options['body'] = JSON.stringify(body);
+    }
+
     try {
-        request(url, options, callBack);
+        request(options, callBack);
     }
     catch (e) {
         console.log(`[request Handler]`, e);

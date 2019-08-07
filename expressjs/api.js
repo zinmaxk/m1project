@@ -1,6 +1,6 @@
 const callapi = require('./helper/callApi');
-const GET = 'get';
-const POST = 'post';
+const GET = 'GET';
+const POST = 'POST';
 
 module.exports = {
     // Demo api
@@ -10,7 +10,6 @@ module.exports = {
     createEmployee: (params = {}, callback) => {
         callapi('/api/v1/create', POST, params, callback);
     },
-
 
     // Real API
     getMemberships: (params = {}, callback) => {
@@ -47,5 +46,10 @@ module.exports = {
 
     getUserInfo: (params = {}, callback) => {
         callapi('/api/userAccount/' + params.id, GET, params, callback);
+    },
+
+    login: (params = {}, callback) => {
+        // callapi('/login', POST, params, callback, {'Content-Type': 'application/json', json: true});
+        callapi('/login', POST, params, callback);
     },
 };
