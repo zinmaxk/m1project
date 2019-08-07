@@ -91,6 +91,13 @@ module.exports = {
         }
         res.render('owner/owner-report', {"page": page});
     },
+    ownerSReport: (req, res) => {
+        const page = {
+            pageTitle: "OWNER Sample Report",
+            breadCrumbTitle: "Owner Sample Report"
+        }
+        res.render('owner/samplereport', {"page": page});
+    },
     ownerCenterList: (req, res) => {
         // TODO: need to be authorized
         api.getCenters({}, function (error, response, body) {
