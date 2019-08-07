@@ -15,7 +15,7 @@ jQuery.fn.extend({
             modalContent += '  <div class="modal-content">';
             if (!!option.title) {
                 modalContent += '    <div class="modal-header">';
-                modalContent += '      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+                modalContent += '      <button type="button" class="close" class="btn btn-light" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
                 modalContent += '      ' + (option.title);
                 modalContent += '    </div>';
             }
@@ -43,7 +43,7 @@ jQuery.fn.extend({
                     var buttonId = $(this).attr('id') + 'ActionButton';
                     var cancelId = $(this).attr('id') + 'CancelButton';
 
-                    modalContent += '      <button type="button" id="' + cancelId + '" class="btn btn-default" data-dismiss="modal">Cancel</button>';
+                    modalContent += '      <button type="button" id="' + cancelId + '" class="btn btn-light" data-dismiss="modal">Cancel</button>';
                     modalContent += '      <button type="button" id="' + buttonId +  '" class="btn btn-primary" data-dismiss="modal">Create</button>';
                 }
                 modalContent += '    </div>';

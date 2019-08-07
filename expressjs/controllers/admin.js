@@ -22,6 +22,13 @@ module.exports = {
         }
         res.render('admin/admin-report', {"page": page});
     },
+    adminSReport: (req, res) => {
+        const page = {
+            pageTitle: "Admin Sample report",
+            breadCrumbTitle: "Admin Sample report"
+        }
+        res.render('admin/samplereport', {"page": page});
+    },
     adminContract: (req, res) => {
         const page = {
             pageTitle: "admin contract",

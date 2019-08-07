@@ -87,7 +87,14 @@ module.exports = (router) => {
         }
         res.render('contact', { "page": page });
     });
-
+    router.route('/successfulnoti').get(function(req, res) {
+        // NEW CODE
+        const page = {
+            pageTitle: "CONGRATULATION",
+            breadCrumbTitle: "Successful Page"
+        }
+        res.render('successfulnoti', { "page": page });
+    });
     router.route('/schedule-list').get(controller.getAllSchedule);
     router.route('/class-info').get(function(req, res) {
         // NEW CODE
