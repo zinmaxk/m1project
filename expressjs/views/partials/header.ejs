@@ -30,54 +30,74 @@
                             <li><a href="/schedule-list">Schedule List</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="javascript:" class="" data-toggle="dropdown">Player <i
-                                    class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="/player/player-info">Player Zone</a></li>
-                            <li><a href="/player/player-booking">Booking history</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="javascript:" class="" data-toggle="dropdown">Owner <i
-                                    class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="/owner/owner-zone"> Owner Zone </a></li>
-                            <li><a href="/owner/owner-centerlist"> Center Management </a></li>
-                            <li><a href="/owner/owner-yardlist"> Yard Management </a></li>
-                            <li><a href="/owner/owner-booking-center"> Booking Management </a></li>
-                            <li class="nav-item dropdown">
-                                <a href="javascript:" class="" data-toggle="dropdown">Report <i
-                                            class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/owner/samplereport"> Sample Report</a></li>
-                                    <li><a href="/owner/owner-report">Your Report</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <% if (locals.user && user.category == 2) { %>
+                        <li class="nav-item dropdown">
+                            <a href="javascript:" class="" data-toggle="dropdown">Player <i
+                                        class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/player/player-info">Player Zone</a></li>
+                                <li><a href="/player/player-booking">Booking history</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
 
-                    <li class="nav-item dropdown">
-                        <a href="javascript:" class="" data-toggle="dropdown">Admin <i
-                                    class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="/admin/admin-zone">Admin Zone</a></li>
-                            <li><a href="/admin/admin-contract">Contract Management</a></li>
-                            <li class="nav-item dropdown">
-                                <a href="javascript:" class="" data-toggle="dropdown">Report <i
-                                            class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/admin/samplereport"> Sample Report</a></li>
-                                    <li><a href="/admin/admin-report">Your Report</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <% if (locals.user && user.category == 3) { %>
+                        <li class="nav-item dropdown">
+                            <a href="javascript:" class="" data-toggle="dropdown">Owner <i
+                                        class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/owner/owner-zone"> Owner Zone </a></li>
+                                <li><a href="/owner/owner-centerlist"> Center Management </a></li>
+                                <li><a href="/owner/owner-yardlist"> Yard Management </a></li>
+                                <li><a href="/owner/owner-booking-center"> Booking Management </a></li>
+                                <li class="nav-item dropdown">
+                                    <a href="javascript:" class="" data-toggle="dropdown">Report <i
+                                                class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="/owner/samplereport"> Sample Report</a></li>
+                                        <li><a href="/owner/owner-report">Your Report</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    <% } %>
 
-                    <li class="header-ticket nav-item">
-                        <a class="ticket-btn btn" href="/login"> Login
-                        </a>
-                    </li>
+                    <% if (locals.user && user.category == 1) { %>
+                        <li class="nav-item dropdown">
+                            <a href="javascript:" class="" data-toggle="dropdown">Admin <i
+                                        class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/admin/admin-zone">Admin Zone</a></li>
+                                <li><a href="/admin/admin-contract">Contract Management</a></li>
+                                <li class="nav-item dropdown">
+                                    <a href="javascript:" class="" data-toggle="dropdown">Report <i
+                                                class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="/admin/samplereport"> Sample Report</a></li>
+                                        <li><a href="/admin/admin-report">Your Report</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    <% } %>
+
+                    <% if (locals.user && user) { %>
+                        <li class="nav-item dropdown">
+                            <a>Hello <%= user.firstName %> <i
+                                        class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="header-ticket nav-item">
+                                    <a href="/auth/logout"> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    <% } else { %>
+                        <li class="header-ticket nav-item">
+                            <a class="ticket-btn btn" href="/login"> Login
+                            </a>
+                        </li>
+                    <% } %>
                 </ul>
             </div>
         </nav>

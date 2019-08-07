@@ -11,7 +11,14 @@ module.exports = {
             if (error) throw new Error(error);
 
             let data = processJsonData(body);
-            res.send(data);
+
+            if (data.message == 'Login successful') {
+                req.session.user = data.data;
+                return res.redirect('/');
+            }
+
+            req.flash('message', data.message);
+            return res.redirect('/login');
         });
     },
 

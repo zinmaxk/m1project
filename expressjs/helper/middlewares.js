@@ -1,6 +1,7 @@
 module.exports = {
     requiresLogin: (req, res, next) => {
-        if (req.session && req.session.token) {
+        if (req.session && req.session.user) {
+            res.locals.user = req.session.user;
             return next();
         } else {
             res.send('You must be logged in to view this page.');
@@ -8,5 +9,13 @@ module.exports = {
             // err.status = 401;
             // return next(err);
         }
+    },
+    loggedUserData: (req, res, next) => {
+        console.log(req.session.user);
+        if (req.session && req.session.user) {
+            res.locals.user = req.session.user;
+            // res.send()
+        }
+        next();
     }
 }
