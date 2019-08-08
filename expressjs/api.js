@@ -22,6 +22,10 @@ module.exports = {
         callapi('/views/memberships', GET, params, callback);
     },
 
+    getSchedules: (params = {}, callback) => {
+        callapi('/views/schedules', GET, params, callback);
+    },
+
     getCenters: (params = {}, token, callback) => {
         callapi('/api/center?action=query', GET, params, callback, parseAuthorizationHeader(token));
     },
