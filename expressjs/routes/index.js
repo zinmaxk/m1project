@@ -64,7 +64,7 @@ module.exports = (router) => {
         res.render('blog', {"page": page});
     });
 
-    router.route('/membership').get(controller.membership);
+    router.route('/membership').get(loggedUserData, controller.membership);
 
     router.route('/404error').get(function (req, res) {
         // NEW CODE
