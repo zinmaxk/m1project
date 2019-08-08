@@ -54,7 +54,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-name" placeholder="Yard name"
-                                           type="text" required
+                                           type="text" readonly
                                            value="<%= data.yard_name ? data.yard_name : '' %>"
                                     />
                                 </div>
@@ -62,7 +62,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Slot" type="number"
-                                           required
+                                           readonly
                                            value="<%= data.slot ? data.slot : 0 %>"
                                     />
                                 </div>
@@ -70,7 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Website"
-                                           required
+                                           readonly
                                            value="<%= data.website ? data.website : '' %>"
                                     />
                                 </div>
@@ -78,7 +78,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-email" placeholder="Address"
-                                           type="text" required
+                                           type="text" readonly
                                            value="<%= data.address ? data.address : '' %>"
                                     />
                                 </div>
@@ -86,7 +86,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="City"
-                                           type="text" required
+                                           type="text" readonly
                                            value="<%= data.city ? data.city : '' %>"
                                     />
                                 </div>
@@ -94,7 +94,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Country"
-                                           required
+                                           readonly
                                            value="<%= data.country ? data.country : '' %>"
                                     />
                                 </div>
@@ -103,8 +103,8 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Time Open"
                                            name="opentime" id="opentime"
-                                           type="datetime" required
-                                           value="<%= data.timeOpen ? data.timeOpen : '' %>"
+                                           type="datetime" readonly
+                                           value="<%= data.timeOpen ? data.timeOpen : '' %> "
                                     />
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Time Close"
                                            name="closetime" id="closetime"
-                                           type="datetime" required
+                                           type="datetime" readonly
                                            value="<%= data.timeClose ? data.timeClose : '' %>"
                                     />
                                 </div>
@@ -121,20 +121,7 @@
 
 
                         </div>
-                        <div class="sponsors-wrap">
-                            <div class="row sponsor-padding text-center">
-                                <!-- Col 1 end -->
-                                <div class="col-md-6 text-right">
-                                    <a href="#" class="btn"> Edit </a>
-                                </div>
-                                <!-- Col 2 end -->
-                                <div class="col-md-6 text-left">
-                                    <a href="/owner/owner-center" class="btn">Home</a>
-                                </div>
-                            </div>
-                        </div>
                 </div>
-
                 </form>
             </div>
         </div>
