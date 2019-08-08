@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <label class="control-label">First name</label>
                         <input class="form-control form-control-subject" placeholder="First name"
-                               required
+                        readonly
                                value="<%= data && data.firstName ? data.firstName : '' %>"
                         />
                     </div>
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <label class="control-label">Last name</label>
                         <input class="form-control form-control-subject" placeholder="Last name"
-                               required type="text"
+                               required type="text" readonly
                                value="<%= data && data.lastName ? data.lastName : '' %>"
                         />
                     </div>
@@ -58,7 +58,7 @@
                     <div class="card-body">
                         <label class="control-label">DOB</label>
                         <input class="form-control form-control-subject" placeholder="DOB"
-                               required type="date"
+                               required type="date" readonly
                                value="<%= convertDateToString(data.dateOfBirth) %>"
                         />
                     </div>
@@ -71,7 +71,7 @@
                     <div class="card-body">
                         <label class="control-label">Phone Number</label>
                         <input class="form-control form-control-subject" placeholder="Phone Number"
-                               required type="tel"
+                               required type="tel"readonly
                                value="<%= data && data.phoneNumber ? data.phoneNumber : '' %>"
                         />
                     </div>
@@ -84,7 +84,7 @@
                     <div class="card-body">
                         <label class="control-label">Address</label>
                         <input class="form-control form-control-subject" placeholder="Address"
-                               required type="text"
+                               required type="text" readonly
                                value="<%= data && data.address ? data.address : '' %>"
                         />
                     </div>
@@ -97,7 +97,7 @@
                     <div class="card-body">
                         <label class="control-label">City</label>
                         <input class="form-control form-control-subject" placeholder="City"
-                               required type="text"
+                               required type="text" readonly
                                value="<%= data && data.city ? data.city : '' %>"
                         />
                     </div>
@@ -110,27 +110,13 @@
                     <div class="card-body">
                         <label class="control-label">Country</label>
                         <input class="form-control form-control-subject" placeholder="Country"
-                               required type="text"
+                               required type="text" readonly
                                value="<%= data && data.country ? data.country : '' %>"
                         />
                     </div>
                 </div>
             </div>
         </div>
-        <section>
-            <div class="sponsors-wrap">
-                <div class="row sponsor-padding text-center">
-                    <!-- Col 1 end -->
-                    <div class="col-md-6 text-right">
-                        <a href="#" class="btn"> Edit </a>
-                    </div>
-                    <!-- Col 2 end -->
-                    <div class="col-md-6 text-left">
-                        <a href="/changepassword" class="btn"> Change Password</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </section>
 
     <!-- footer start-->

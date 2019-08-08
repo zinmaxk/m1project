@@ -32,7 +32,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-name" placeholder="Center Name"
-                                           type="text" required
+                                           type="text" readonly
                                            value="<%= data.name ? data.name : '' %>"
                                     />
                                 </div>
@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control form-control-name" placeholder="Website"
-                                           type="text"
+                                           type="text" readonly
                                            value="<%= data.website ? data.website : '' %>"
                                     />
                                 </div>
@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Phone Number"
                                            name="phone" id="phone"
-                                           type="number" required
+                                           type="number" readonly
                                            value="<%= data.phone ? data.phone : '' %>"
                                     />
                                 </div>
@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Address"
                                            name="address" id="#"
-                                           required
+                                           readonly
                                            value="<%= data.address ? data.address : '' %>"
                                     />
                                 </div>
@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="City" name="City"
                                            id="City" type="text"
-                                           required
+                                           readonly
                                            value="<%= data.city ? data.city : '' %>"
                                     />
                                 </div>
@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-email" placeholder="Country" name="Country"
                                            id="Country"
-                                           type="text" required
+                                           type="text" readonly
                                            value="<%= data.country ? data.country : '' %>"
                                     />
                                 </div>
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Time Open"
                                            name="opentime" id="opentime"
-                                           type="datetime" required
+                                           type="datetime" readonly
                                            value="<%= data.openTime ? data.openTime : '' %>"
                                     />
                                 </div>
@@ -96,25 +96,13 @@
                                 <div class="form-group">
                                     <input class="form-control form-control-subject" placeholder="Time Close"
                                            name="closetime" id="closetime"
-                                           type="datetime" required
+                                           type="datetime" readonly
                                            value="<%= data.closeTime ? data.closeTime : '' %>"
                                     />
                                 </div>
                             </div>
 
 
-                        </div>
-                        <div class="sponsors-wrap">
-                            <div class="row sponsor-padding text-center">
-                                <!-- Col 1 end -->
-                                <div class="col-md-6 text-right">
-                                    <a href="#" class="btn"> Edit </a>
-                                </div>
-                                <!-- Col 2 end -->
-                                <div class="col-md-6 text-left">
-                                    <a href="/owner/owner-center" class="btn"> Home </a>
-                                </div>
-                            </div>
                         </div>
                 </div>
 
