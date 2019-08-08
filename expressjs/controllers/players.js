@@ -17,7 +17,7 @@ module.exports = {
             breadCrumbTitle: "User info"
         };
 
-        api.getUserInfo(params, function (error, response, body) {
+        api.getUserInfo(params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             res.render('player/player-info', {page: page, data: data, convertDateToString: convertServerDateToString});
         });

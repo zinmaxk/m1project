@@ -39,21 +39,21 @@ const routes = require('./routes/index.js');
 app.use('/', routes(router));
 
 // Route not found (404)
-// app.use(function(req, res, next) {
-//     const page = {
-//         pageTitle: 'Error!',
-//         breadCrumbTitle: "Page not found"
-//     };
-//     return res.status(404).render('404error', {page: page});
-// });
-//
-// app.use(function(req, res, next) {
-//     const page = {
-//         pageTitle: 'Error 500!',
-//         breadCrumbTitle: "Oops... Something went wrong"
-//     };
-//     return res.status(500).render('500error', {page: page});
-// });
+app.use(function(req, res, next) {
+    const page = {
+        pageTitle: 'Error!',
+        breadCrumbTitle: "Page not found"
+    };
+    return res.status(404).render('404error', {page: page});
+});
+
+app.use(function(req, res, next) {
+    const page = {
+        pageTitle: 'Error 500!',
+        breadCrumbTitle: "Oops... Something went wrong"
+    };
+    return res.status(500).render('500error', {page: page});
+});
 
 app.listen(`${stage.port}`, () => {
     console.log(`Server now listening at http://localhost:${stage.port}`);

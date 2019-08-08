@@ -4,7 +4,8 @@ module.exports = {
             res.locals.user = req.session.user;
             return next();
         } else {
-            res.send('You must be logged in to view this page.');
+            // res.send('You must be logged in to view this page.');
+            return res.redirect('/login');
             // let err = new Error('You must be logged in to view this page.');
             // err.status = 401;
             // return next(err);
