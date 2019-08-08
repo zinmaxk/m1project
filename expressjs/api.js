@@ -31,7 +31,7 @@ module.exports = {
     },
 
     getYards: (params = {}, token, callback) => {
-        callapi('/api/views/yards', GET, params, callback, parseAuthorizationHeader(token));
+        callapi('/api/views/yard?action=query', GET, params, callback, parseAuthorizationHeader(token));
     },
 
     getYardDetail: (params = {}, token, callback) => {
