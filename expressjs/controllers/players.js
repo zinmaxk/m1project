@@ -11,7 +11,7 @@ module.exports = {
         res.render('player/player-booking', { "page": page });
     },
     playerInfo: (req, res) => {
-        let params = {id: 14}; // Hard code for testing
+        let params = {id: req.session.user.userId};
         const page = {
             pageTitle: "User Info",
             breadCrumbTitle: "User info"

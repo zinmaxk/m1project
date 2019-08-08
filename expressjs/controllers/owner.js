@@ -6,7 +6,7 @@ const convertServerDateToString = require('../helper/utils').convertServerDateTo
 
 module.exports = {
     ownerZone: (req, res) => {
-        let params = {id: 6}; // Hard code for testing
+        let params = {id: req.session.user.userId};
         const page = {
             pageTitle: "OWNER CENTER",
             breadCrumbTitle: "Owner Zone"
