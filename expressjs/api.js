@@ -23,7 +23,7 @@ module.exports = {
     },
 
     getCenters: (params = {}, token, callback) => {
-        callapi('/api/views/centers', GET, params, callback, parseAuthorizationHeader(token));
+        callapi('/api/center?action=query', GET, params, callback, parseAuthorizationHeader(token));
     },
 
     getCenterDetail: (params = {}, token, callback) => {

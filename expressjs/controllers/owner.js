@@ -50,9 +50,9 @@ module.exports = {
         if (req.method == 'POST') {
             // API create
             data = {
-                ownerId: 6, //TODO: hardcode as authorized user
-                category: 3, //TODO: hardcode as authorized user,
-                status: 1, //TODO: hardcode as authorized user,
+                // ownerId: req.session.user.id,
+                category: req.session.user.category,
+                status: 1,
                 name: req.body.centerName,
                 website: req.body.website,
                 phone: req.body.phone,
@@ -99,7 +99,6 @@ module.exports = {
         res.render('owner/samplereport', {"page": page});
     },
     ownerCenterList: (req, res) => {
-        // TODO: need to be authorized
         api.getCenters({}, req.session.user.token, function (error, response, body) {
             let centers = processJsonData(body);
             const page = {
@@ -110,7 +109,6 @@ module.exports = {
         });
     },
     ownerCenterDetail: (req, res) => {
-        // TODO: need to be authorized
         api.getCenterDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
 
@@ -123,7 +121,6 @@ module.exports = {
         });
     },
     ownerYardList: (req, res) => {
-        // TODO: need to be authorized
         api.getYards({}, req.session.user.token, function (error, response, body) {
             let yards = processJsonData(body);
             const page = {
@@ -134,7 +131,6 @@ module.exports = {
         });
     },
     ownerYardDetail: (req, res) => {
-        // TODO: need to be authorized
         api.getYardDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
