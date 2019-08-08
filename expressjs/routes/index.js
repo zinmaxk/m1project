@@ -84,6 +84,15 @@ module.exports = (router) => {
         res.render('500error', {"page": page});
     });
 
+    router.route('/requestauthor').get(function (req, res) {
+        // NEW CODE
+        const page = {
+            pageTitle: "Authorization",
+            breadCrumbTitle: "Authorization required"
+        }
+        res.render('requestauthor', {"page": page});
+    });
+
     router.route('/contact').get(loggedUserData, function (req, res) {
         // NEW CODE
         const page = {
