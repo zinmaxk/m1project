@@ -47,7 +47,11 @@ module.exports = {
 
         return year + '-' + month + '-' + day;
     },
-    parseAuthorizationHeader: (token) => {
-       return {Authorization: 'Bearer ' + token};
+    parseAuthorizationHeader: (token, json = false) => {
+        let data = {Authorization: 'Bearer ' + token};
+        if (json)
+            data['Content-Type'] = 'application/json';
+
+        return data
     },
 };

@@ -14,6 +14,8 @@ module.exports = (router) => {
         .get(requiresLogin, controller.ownerSReport);
     router.route('/owner/owner-centercreation')
         .get(requiresLogin, controller.ownerCenterCreate);
+    router.route('/owner/owner-centercreation')
+        .post(requiresLogin, controller.ownerCenterCreate);
     router.route('/owner/owner-centerlist')
         .get(requiresLogin, controller.ownerCenterList);
     router.route('/owner/owner-centerdetail/:id')

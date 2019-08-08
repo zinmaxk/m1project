@@ -50,7 +50,7 @@ module.exports = {
         if (req.method == 'POST') {
             // API create
             data = {
-                // ownerId: req.session.user.id,
+                ownerId: req.session.user.userId,
                 category: req.session.user.category,
                 status: 1,
                 name: req.body.centerName,
@@ -64,7 +64,9 @@ module.exports = {
             };
 
             api.createCenter(data, req.session.user.token, function (error, response, body) {
-                res.render('owner/owner-centercreation', {page: page, data: data, message: ''});
+                req.flash('message', 'Your center has created successful!');
+                // res.render('owner/owner-centercreation', {page: page, data: data, message: ''});
+                res.redirect('/owner/owner-centerlist');
             });
             return;
         }
@@ -105,7 +107,7 @@ module.exports = {
                 pageTitle: "OWNER Center List",
                 breadCrumbTitle: "Center List"
             };
-            res.render('owner/owner-centerlist', {page: page, centers: centers});
+            res.render('owner/owner-centerlist', {page: page, centers: centers, message: req.flash('message')});
         });
     },
     ownerCenterDetail: (req, res) => {

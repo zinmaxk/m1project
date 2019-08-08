@@ -47,7 +47,7 @@ module.exports = {
     },
 
     createCenter: (params = {}, token, callback) => {
-        callapi('/api/center/', POST, params, callback, parseAuthorizationHeader(token));
+        callapi('/api/center/', POST, params, callback, parseAuthorizationHeader(token, true));
     },
 
     getUserInfo: (params = {}, token, callback) => {
