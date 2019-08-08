@@ -51,7 +51,7 @@ module.exports = {
                 pageTitle: "Contract Detail",
                 breadCrumbTitle: "Contract Detail"
             };
-            res.render('admin/contract-detail', {page: page, data: data});
+            res.render('admin/contract-detail', {page: page, data: data, convertDateToString: convertServerDateToString});
         });
     },
     contractList: (req, res) => {

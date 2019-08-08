@@ -128,7 +128,7 @@
                                         <input class="form-control form-control-subject" placeholder="Price"
                                                name="price" id="#"
                                                readonly
-                                               value="<%= data.membershipType ? data.membershipType : '' %>"
+                                               value="<%= data.memberShipType ? data.memberShipType : '' %>"
                                         />
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@
                                         <label class="control-label">Start Date</label>
                                         <input class="form-control form-control-subject" placeholder="Start Date"
                                                readonly
-                                               value="<%= data.startDate ? data.startDate : '' %>"
+                                               value="<%= convertDateToString(data.startDate) %>"
                                         />
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                                         <label class="control-label">End Date</label>
                                         <input class="form-control form-control-subject" placeholder="End Date"
                                                readonly
-                                               value="<%= data.endDate ? data.endDate : '' %>"
+                                               value="<%= convertDateToString(data.endDate) %>"
                                         />
                                     </div>
                                 </div>
