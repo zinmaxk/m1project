@@ -63,7 +63,7 @@ module.exports = {
                 closeTime: req.body.closeTime
             };
 
-            api.createCenter(data, function (error, response, body) {
+            api.createCenter(data, req.session.user.token, function (error, response, body) {
                 res.render('owner/owner-centercreation', {page: page, data: data, message: ''});
             });
             return;
@@ -100,7 +100,7 @@ module.exports = {
     },
     ownerCenterList: (req, res) => {
         // TODO: need to be authorized
-        api.getCenters({}, function (error, response, body) {
+        api.getCenters({}, req.session.user.token, function (error, response, body) {
             let centers = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Center List",
@@ -111,7 +111,7 @@ module.exports = {
     },
     ownerCenterDetail: (req, res) => {
         // TODO: need to be authorized
-        api.getCenterDetail(req.params, function (error, response, body) {
+        api.getCenterDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
 
 
@@ -124,7 +124,7 @@ module.exports = {
     },
     ownerYardList: (req, res) => {
         // TODO: need to be authorized
-        api.getYards({}, function (error, response, body) {
+        api.getYards({}, req.session.user.token, function (error, response, body) {
             let yards = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Yard List",
@@ -135,7 +135,7 @@ module.exports = {
     },
     ownerYardDetail: (req, res) => {
         // TODO: need to be authorized
-        api.getYardDetail(req.params, function (error, response, body) {
+        api.getYardDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
                 pageTitle: "OWNER Yard Detail",

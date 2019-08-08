@@ -10,7 +10,7 @@ module.exports = {
             breadCrumbTitle: "Admin zone"
         };
 
-        api.getUserInfo(params, function (error, response, body) {
+        api.getUserInfo(params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             res.render('admin/admin-zone', {page: page, data: data, convertDateToString: convertServerDateToString});
         });
@@ -45,7 +45,7 @@ module.exports = {
     },
     contractDetail: (req, res) => {
         // TODO: need to be authorized
-        api.getContractDetail(req.params, function (error, response, body) {
+        api.getContractDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
                 pageTitle: "Contract Detail",
@@ -56,7 +56,7 @@ module.exports = {
     },
     contractList: (req, res) => {
         // TODO: need to be authorized
-        api.getContractList({}, function (error, response, body) {
+        api.getContractList({}, req.session.user.token, function (error, response, body) {
             let contracts = processJsonData(body);
             const page = {
                 pageTitle: "Contract List",

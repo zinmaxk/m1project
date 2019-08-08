@@ -1,4 +1,5 @@
 const callapi = require('./helper/callApi');
+const parseAuthorizationHeader = require('./helper/utils').parseAuthorizationHeader;
 const GET = 'GET';
 const POST = 'POST';
 
@@ -12,44 +13,45 @@ module.exports = {
     },
 
     // Real API
-    getMemberships: (params = {}, callback) => {
-        callapi('/api/views/memberships', GET, params, callback);
-    },
-
-    getCenters: (params = {}, callback) => {
-        callapi('/api/views/centers', GET, params, callback);
-    },
-
-    getCenterDetail: (params = {}, callback) => {
-        callapi('/api/center/' + params.id, GET, params, callback);
-    },
-
-    getYards: (params = {}, callback) => {
-        callapi('/api/views/yards', GET, params, callback);
-    },
-
-    getYardDetail: (params = {}, callback) => {
-        callapi('/api/views/yard/' + params.id, GET, params, callback);
-    },
-
-    getContractList: (params = {}, callback) => {
-        callapi('/api/views/contracts/', GET, params, callback);
-    },
-
-    getContractDetail: (params = {}, callback) => {
-        callapi('/api/views/contract/' + params.id, GET, params, callback);
-    },
-
-    createCenter: (params = {}, callback) => {
-        callapi('/api/center/', POST, params, callback);
-    },
-
-    getUserInfo: (params = {}, callback) => {
-        callapi('/api/userAccount/' + params.id, GET, params, callback);
-    },
-
     login: (params = {}, callback) => {
         // callapi('/login', POST, params, callback, {'Content-Type': 'application/json', json: true});
         callapi('/login', POST, params, callback);
     },
+
+    getMemberships: (params = {}, callback) => {
+        callapi('/views/memberships', GET, params, callback);
+    },
+
+    getCenters: (params = {}, token, callback) => {
+        callapi('/api/views/centers', GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getCenterDetail: (params = {}, token, callback) => {
+        callapi('/api/center/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getYards: (params = {}, token, callback) => {
+        callapi('/api/views/yards', GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getYardDetail: (params = {}, token, callback) => {
+        callapi('/api/views/yard/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getContractList: (params = {}, token, callback) => {
+        callapi('/api/views/contracts/', GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getContractDetail: (params = {}, token, callback) => {
+        callapi('/api/views/contract/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
+    },
+
+    createCenter: (params = {}, token, callback) => {
+        callapi('/api/center/', POST, params, callback, parseAuthorizationHeader(token));
+    },
+
+    getUserInfo: (params = {}, token, callback) => {
+        callapi('/api/userAccount/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
+    },
+
 };

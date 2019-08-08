@@ -47,4 +47,7 @@ module.exports = {
 
         return year + '-' + month + '-' + day;
     },
+    parseAuthorizationHeader: (token) => {
+       return {Authorization: 'Bearer ' + token};
+    },
 };
