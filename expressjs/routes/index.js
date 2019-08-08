@@ -128,6 +128,15 @@ module.exports = (router) => {
         res.render('changepassword', {"page": page});
     });
 
+    router.route('/booking-form').get(function (req, res) {
+        // NEW CODE
+        const page = {
+            pageTitle: "Booking Form",
+            breadCrumbTitle: "Booking Form"
+        }
+        res.render('booking-form', {"page": page});
+    });
+
     router.route('/test-call-api').get(function (req, res) {
         // api.getGetInfo({}, function (error, response, body) {
         //     const page = {
