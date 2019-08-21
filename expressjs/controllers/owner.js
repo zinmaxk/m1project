@@ -76,8 +76,35 @@ module.exports = {
         const page = {
             pageTitle: "OWNER YARD CREATION",
             breadCrumbTitle: "Owner Yard Creation"
+        };
+
+        if (req.method == 'POST') {
+            // API create
+            data = {
+                ownerId: req.session.user.userId,
+                category: req.session.user.category,
+                statusId: 1,
+                name: req.body.yardName,
+                centerId: req.body.center,
+                sportId: req.body.sport,
+            };
+            console.log('ownerYardCreate', req.body, data);
+
+            api.createYard(data, req.session.user.token, function (error, response, body) {
+                req.flash('message', 'Your yard has created successful!');
+                res.redirect('/owner/owner-yardlist');
+            });
+            return;
         }
-        res.render('owner/owner-yardcreation', {"page": page});
+
+        api.getCenters({}, req.session.user.token, function (error, response, body) {
+            let centers = processJsonData(body);
+            api.getSports({}, function (error, response, body) {
+                let sports = processJsonData(body);
+                res.render('owner/owner-yardcreation', {page: page, centers: centers, sports: sports});
+            })
+        });
+
     },
     ownerMember: (req, res) => {
         const page = {

@@ -15,6 +15,7 @@
     <!-- Banner end -->
     <!-- ts Content start -->
     <!-- Yard creation form -->
+    <form id="contact-form" class="contact-form" method="post">
     <section class="ts-contact-form">
         <div class="container">
             <div class="row">
@@ -27,29 +28,30 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
                         <div class="error-container">
                             <div class="row">
-                            <div class="col-md-6" style="padding-bottom: 20px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <label class="control-label">Center Name</label>
-                                        <select class="form-control">
-                                            <option value="1">Center 1</option>
-                                        </select>
+                                <div class="col-md-6" style="padding-bottom: 20px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label class="control-label">Center Name</label>
+                                            <select class="form-control" required id="centers" name="center">
+                                                <option value="" selected>Chose a Center</option>
+                                                <% centers.forEach(function(center) { %>
+                                                    <option value="<%= center.id %>"><%= center.name %></option>
+                                                <% }) %>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-md-6" style="padding-bottom: 20px;">
                                     <div class="card">
                                         <div class="card-body">
                                             <label class="control-label">Sport Name</label>
-                                            <select class="form-control">
-                                                <option value="1">Yoga</option>
-                                                <option value="1">Football</option>
-                                                <option value="1">Basketball</option>
-                                                <option value="1">Tennis</option>
-                                                <option value="1">Swimming </option>
+                                            <select class="form-control" id="sports" required name="sport">
+                                                <option value="" selected>Chose a Sport</option>
+                                                <% sports.forEach(function(sport) { %>
+                                                    <option value="<%= sport.id %>"><%= sport.name %></option>
+                                                <% }) %>
                                             </select>
                                         </div>
                                     </div>
@@ -59,7 +61,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Yard Name</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Center Name" type="text"
+                                                   placeholder="Center Name" type="text" name="yardName"
                                                    required>
                                         </div>
                                     </div>
@@ -70,7 +72,7 @@
                                             <label class="control-label">Slot Available</label>
                                             <input class="form-control form-control-subject"
                                                    placeholder="Slot Available" type="number"
-                                                   required>
+                                                   required readonly id="slot">
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +83,7 @@
                                             <label class="control-label">Phone Number</label>
                                             <input class="form-control form-control-subject"
                                                    placeholder="Phone Number" type="number"
-                                                   required>
+                                                   required readonly id="phone">
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +93,7 @@
                                             <label class="control-label">Address</label>
                                             <input class="form-control form-control-subject"
                                                    placeholder="Address" type="text"
-                                                   required>
+                                                   required readonly id="address">
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +103,7 @@
                                             <label class="control-label">City</label>
                                             <input class="form-control form-control-subject"
                                                    placeholder="City" type="text"
-                                                   required>
+                                                   required readonly id="city">
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +113,7 @@
                                             <label class="control-label">Country</label>
                                             <input class="form-control form-control-subject"
                                                    placeholder="Country" type="text"
-                                                   required>
+                                                   required readonly id="country">
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +122,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Start Time</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Start Time" type="time" value="08:00:00" readonly>
+                                                   placeholder="Start Time" type="time" value="08:00:00" readonly id="startTime">
                                         </div>
                                     </div>
                                 </div>
@@ -130,13 +132,12 @@
                                         <div class="card-body">
                                             <label class="control-label">End Time </label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="End Time" type="time" value="20:00:00" readonly>
+                                                   placeholder="End Time" type="time" value="20:00:00" readonly id="endTime">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -145,7 +146,7 @@
                 <div class="row sponsor-padding text-center">
                     <!-- Col 1 end -->
                     <div class="col-md-6 text-right">
-                        <a href="#" class="btn"> Confirm </a>
+                        <button type="submit" class="btn"> Confirm </button>
                     </div>
                     <!-- Col 2 end -->
                     <div class="col-md-6 text-left">
@@ -155,9 +156,10 @@
             </div>
         </section>
         <div class="speaker-shap">
-            <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+            <img class="shap1" src="../images/shap/home_schedule_memphis2.png" alt="">
         </div>
     </section>
+    </form>
 
 
     <!-- footer start-->
@@ -168,3 +170,48 @@
 </body>
 
 </html>
+<script type="text/javascript">
+    var sports = <%- JSON.stringify(sports) %>;
+    var centers = <%- JSON.stringify(centers) %>;
+
+    $(function () {
+        $('#sports').change(function () {
+            var val = $(this).val();
+            var sport = sports.filter(function(item) {
+                return item.id == val;
+            })
+            if (sport.length > 0){
+                $('#slot').val(sport[0].slot);
+            }
+            else {
+                $('#slot').val('');
+            }
+        });
+
+        $('#centers').change(function () {
+            var val = $(this).val();
+            var center = centers.filter(function (item) {
+                return item.id == val;
+            })
+
+            if (center.length > 0) {
+                center = center[0];
+
+                $('#phone').val(center.phone);
+                $('#address').val(center.address);
+                $('#city').val(center.city);
+                $('#country').val(center.country);
+                $('#startTime').val(center.openTime);
+                $('#endTime').val(center.closeTime);
+            }
+            else {
+                $('#phone').val('');
+                $('#address').val('');
+                $('#city').val('');
+                $('#country').val('');
+                $('#startTime').val('');
+                $('#endTime').val('');
+            }
+        });
+    })
+</script>

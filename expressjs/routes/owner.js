@@ -22,6 +22,8 @@ module.exports = (router) => {
         .get(requiresLogin, controller.ownerCenterDetail);
     router.route('/owner/owner-yardcreation')
         .get(requiresLogin, controller.ownerYardCreate);
+    router.route('/owner/owner-yardcreation')
+        .post(requiresLogin, controller.ownerYardCreate);
     router.route('/owner/owner-yardlist')
         .get(requiresLogin, controller.ownerYardList);
     router.route('/owner/owner-yarddetail/:id')

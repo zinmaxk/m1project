@@ -58,4 +58,11 @@ module.exports = {
         callapi('/api/userAccount/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
     },
 
+    getSports: (params = {}, callback) => {
+        callapi('/sports', GET, params, callback);
+    },
+
+    createYard: (params = {}, token, callback) => {
+        callapi('/api/yard/', POST, params, callback, parseAuthorizationHeader(token, true));
+    },
 };
