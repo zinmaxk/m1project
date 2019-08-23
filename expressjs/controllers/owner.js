@@ -88,7 +88,6 @@ module.exports = {
                 centerId: req.body.center,
                 sportId: req.body.sport,
             };
-            console.log('ownerYardCreate', req.body, data);
 
             api.createYard(data, req.session.user.token, function (error, response, body) {
                 req.flash('message', 'Your yard has created successful!');

@@ -5,6 +5,7 @@ const routesAdmin = require('./admin');
 const routesOwner = require('./owner');
 const routesUser = require('./player');
 const controller = require('../controllers/index')
+const requiresLogin = require('../helper/middlewares').requiresLogin;
 const loggedUserData = require('../helper/middlewares').loggedUserData;
 
 const api = require('../api');
@@ -128,7 +129,7 @@ module.exports = (router) => {
         res.render('changepassword', {"page": page});
     });
 
-    router.route('/booking-form').get(function (req, res) {
+    router.route('/booking-form').get(requiresLogin, function (req, res) {
         // NEW CODE
         const page = {
             pageTitle: "Booking Form",
