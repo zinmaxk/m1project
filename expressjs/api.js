@@ -26,6 +26,10 @@ module.exports = {
         callapi('/views/schedules', GET, params, callback);
     },
 
+    getScheduleById: (params = {}, token, callback) => {
+        callapi('/api/views/schedule/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
+    },
+
     getCenters: (params = {}, token, callback) => {
         callapi('/api/center?action=query', GET, params, callback, parseAuthorizationHeader(token));
     },
@@ -64,5 +68,9 @@ module.exports = {
 
     createYard: (params = {}, token, callback) => {
         callapi('/api/yard/', POST, params, callback, parseAuthorizationHeader(token, true));
+    },
+
+    createBooking: (params = {}, token, callback) => {
+        callapi('/api/booking/', POST, params, callback, parseAuthorizationHeader(token, true));
     },
 };

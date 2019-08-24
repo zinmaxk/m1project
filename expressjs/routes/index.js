@@ -129,14 +129,8 @@ module.exports = (router) => {
         res.render('changepassword', {"page": page});
     });
 
-    router.route('/booking-form').get(requiresLogin, function (req, res) {
-        // NEW CODE
-        const page = {
-            pageTitle: "Booking Form",
-            breadCrumbTitle: "Booking Form"
-        }
-        res.render('booking-form', {"page": page});
-    });
+    router.route('/booking-form/:id').get(requiresLogin, controller.bookASchedule);
+    router.route('/booking-form/:id').post(requiresLogin, controller.bookASchedule);
 
     router.route('/test-call-api').get(function (req, res) {
         // api.getGetInfo({}, function (error, response, body) {

@@ -34,7 +34,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Username</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Username" type="text"
+                                                   placeholder="Username" type="text" value="<%= user.userName %>"
                                                    readonly>
                                         </div>
                                     </div>
@@ -44,7 +44,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Yard Name</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Yard Name" type="text"
+                                                   placeholder="Yard Name" type="text" value="<%= schedule.yardName %>"
                                                    readonly>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Center Name</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Center Name" type="email"
+                                                   placeholder="Center Name" type="text" value="<%= schedule.centerName %>"
                                                    readonly>
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Schedule date</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="DOB" type="date"
+                                                   placeholder="Schedule Date" type="date" value="<%= convertDateToString(schedule.scheduleDate) %>"
                                                    required>
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                         <div class="card-body">
                                             <label class="control-label">Start Time </label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Phone Number" type="number"
+                                                   placeholder="Phone Number" type="time" value="<%= schedule.startTime %>"
                                                    readonly>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@
                                         <div class="card-body">
                                             <label class="control-label">End Time</label>
                                             <input class="form-control form-control-subject"
-                                                   placeholder="Address" type="text"
+                                                   placeholder="End Time" type="time" value="<%= schedule.endTime %>"
                                                    readonly>
                                         </div>
                                     </div>
@@ -96,23 +96,23 @@
                                     <div class="row sponsor-padding text-center">
                                         <!-- Col 1 end -->
                                         <div class="col-md-6 text-right">
-                                            <a href="#" class="btn"> Confirm </a>
+                                            <button type="submit" class="btn"> Confirm </button>
                                         </div>
                                         <!-- Col 2 end -->
                                         <div class="col-md-6 text-left">
-                                            <a href="/admin/admin-contract" class="btn">Cancel</a>
+                                            <a href="/schedule-list" class="btn">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                         </div>
+                    </form><!-- Contract form end -->
                 </div>
-                </form><!-- Contract form end -->
             </div>
         </div>
 </div>
 <div class="speaker-shap">
-    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+    <img class="shap1" src="../images/shap/home_schedule_memphis2.png" alt="">
 </div>
 </section>
 
