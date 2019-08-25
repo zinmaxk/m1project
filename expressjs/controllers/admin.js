@@ -40,8 +40,30 @@ module.exports = {
         const page = {
             pageTitle: "Contract Creation",
             breadCrumbTitle: "Contract Creation"
+        };
+
+        if (req.method == 'POST') {
+            let insertData = {
+                userAccountId: '',
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                address: '',
+                city: '',
+                dateOfBirth: '',
+                membershipId: '',
+                country: '',
+                startDate: '',
+                endDate: '',
+            };
+            return;
         }
-        res.render('admin/contract-creation', {"page": page});
+
+        api.getMemberships({}, function (error, response, body) {
+            let data = processJsonData(body);
+            res.render('admin/contract-creation', {page: page, memberships: data});
+        });
     },
     contractDetail: (req, res) => {
         // TODO: need to be authorized

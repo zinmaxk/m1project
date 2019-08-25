@@ -27,7 +27,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form id="contact-form" class="contact-form" action="contact-form.php" method="post">
+                    <form id="contact-form" class="contact-form" method="post">
+                        <input type="hidden" id="membershipId" name="membershipId">
                         <div class="error-container">
                         <div class="row">
                             <div class="col-md-6" style="padding-bottom: 20px;">
@@ -115,7 +116,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Category </label>
-                                        <select id="categoryList" class="form-control" >
+                                        <select id="categoryList" class="form-control" required>
+                                            <option value="">Select category type</option>
                                             <option value="owner">Owner</option>
                                             <option value="player">Player</option>
                                         </select>
@@ -126,10 +128,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Type of membership</label>
-                                        <select id="membershipList" class="form-control">
-                                            <option value="Silver">Silver</option>
-                                            <option value="Gold">Gold</option>
-                                            <option value="Platinum">Platinum</option>
+                                        <select id="membershipList" class="form-control" required>
+                                            <option value="">Select membership type</option>
+                                            <option value="silver">Silver</option>
+                                            <option value="gold">Gold</option>
+                                            <option value="platinum">Platinum</option>
                                         </select>
                                     </div>
                                 </div>
@@ -138,7 +141,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Session</label>
-                                        <select class="form-control">
+                                        <select id="sessionList" class="form-control" required>
+                                            <option value="">Select session</option>
                                             <option value="1">1</option>
                                             <option value="6">6</option>
                                             <option value="12">12</option>
@@ -151,7 +155,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Price </label>
-                                        <input class="form-control form-control-subject"
+                                        <input id="price" class="form-control form-control-subject" type="number"
                                                placeholder="Price will be automatically generated" readonly>
                                     </div>
                                 </div>
@@ -178,7 +182,7 @@
         </div>
 </div>
 <div class="speaker-shap">
-    <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
+    <img class="shap1" src="../images/shap/home_schedule_memphis2.png" alt="">
 </div>
 </section>
 <!-- footer start-->
@@ -189,3 +193,35 @@
 </body>
 
 </html>
+<script type="text/javascript">
+    var memberships = <%- JSON.stringify(memberships)%>;
+    var category = '';
+    var cardLevel = '';
+    var session = '';
+
+    $(function () {
+        $('#categoryList').change(function () {
+            category = $(this).val();
+            checkContractPrice();
+        });
+        $('#membershipList').change(function () {
+            cardLevel = $(this).val();
+            checkContractPrice();
+        });
+        $('#sessionList').change(function () {
+            session = $(this).val();
+            checkContractPrice();
+        });
+    });
+    
+    function checkContractPrice() {
+        var membership = memberships.filter(function (item) {
+            return item.type == category && item.cardLevel == cardLevel && item.session == session;
+        });
+
+        if (membership.length > 0) membership = membership[0];
+
+        $("#price").val(membership.price);
+        $("#membershipId").val(membership.id);
+    }
+</script>

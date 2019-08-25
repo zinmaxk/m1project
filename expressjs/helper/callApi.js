@@ -23,7 +23,6 @@ module.exports = function (path, method, body = {}, callBack, newHeaders = {}) {
         options['body'] = JSON.stringify(body);
     }
 
-    console.log(options);
     try {
         request(options, callBack);
     }
