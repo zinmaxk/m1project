@@ -36,7 +36,7 @@
                                     <div class="card-body">
                                         <label class="control-label">First Name</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="First Name" type="text"
+                                               placeholder="First Name" type="text" name="firstName"
                                                required>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                     <div class="card-body">
                                         <label class="control-label">Last Name</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="First Name" type="text"
+                                               placeholder="Last Name" type="text" name="lastName"
                                                required>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     <div class="card-body">
                                         <label class="control-label">Email</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="Email" type="email"
+                                               placeholder="Email" type="email" name="email"
                                                required>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                     <div class="card-body">
                                         <label class="control-label">DOB</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="DOB" type="date"
+                                               placeholder="DOB" type="date" name="dateOfBirth"
                                                required>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                     <div class="card-body">
                                         <label class="control-label">Phone Number </label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="Phone Number" type="number"
+                                               placeholder="Phone Number" type="number" name="phone"
                                                required>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                     <div class="card-body">
                                         <label class="control-label">Address</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="Address" type="text"
+                                               placeholder="Address" type="text" name="address"
                                                required>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                     <div class="card-body">
                                         <label class="control-label">City</label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="City" type="text"
+                                               placeholder="City" type="text" name="city"
                                                required>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                     <div class="card-body">
                                         <label class="control-label">Country </label>
                                         <input class="form-control form-control-subject"
-                                               placeholder="Country" type="text"
+                                               placeholder="Country" type="text" name="country"
                                                required>
                                     </div>
                                 </div>
@@ -116,6 +116,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <label class="control-label">Category </label>
+                                        <input type="hidden" name="accountCategory" id="accountCategory"/>
                                         <select id="categoryList" class="form-control" required>
                                             <option value="">Select category type</option>
                                             <option value="owner">Owner</option>
@@ -160,13 +161,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">Start Date </label>
+                                        <input id="startDate" class="form-control form-control-subject" type="date"
+                                               name="startDate" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label class="control-label">End Date </label>
+                                        <input id="endDate" class="form-control form-control-subject" type="date"
+                                               name="endDate" required>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <section>
                             <div class="sponsors-wrap">
                                 <div class="row sponsor-padding text-center">
                                     <!-- Col 1 end -->
                                     <div class="col-md-6 text-right">
-                                        <a href="#" class="btn"> Confirm </a>
+                                        <button type="submit" class="btn"> Confirm </button>
                                     </div>
                                     <!-- Col 2 end -->
                                     <div class="col-md-6 text-left">
@@ -200,6 +219,21 @@
     var session = '';
 
     $(function () {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd
+        }
+        if(mm<10){
+            mm='0'+mm
+        }
+
+        today = yyyy+'-'+mm+'-'+dd;
+        $('#startDate').attr('min', today);
+        $('#endDate').attr('min', today);
+
         $('#categoryList').change(function () {
             category = $(this).val();
             checkContractPrice();
@@ -221,7 +255,17 @@
 
         if (membership.length > 0) membership = membership[0];
 
+        var accountCategory;
+        switch (category) {
+            case "owner":
+                accountCategory = 3;
+                break;
+            case "player":
+                accountCategory = 2;
+                break;
+        }
         $("#price").val(membership.price);
         $("#membershipId").val(membership.id);
+        $("#accountCategory").val(accountCategory);
     }
 </script>

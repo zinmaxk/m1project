@@ -54,6 +54,10 @@ module.exports = {
         callapi('/api/views/contract/' + params.id, GET, params, callback, parseAuthorizationHeader(token));
     },
 
+    createContract: (params = {}, token, callback) => {
+        callapi('/api/views/contract', POST, params, callback, parseAuthorizationHeader(token, true));
+    },
+
     createCenter: (params = {}, token, callback) => {
         callapi('/api/center/', POST, params, callback, parseAuthorizationHeader(token, true));
     },
@@ -73,4 +77,5 @@ module.exports = {
     createBooking: (params = {}, token, callback) => {
         callapi('/api/booking/', POST, params, callback, parseAuthorizationHeader(token, true));
     },
+
 };

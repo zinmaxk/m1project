@@ -34,7 +34,7 @@ module.exports = {
             pageTitle: "admin contract",
             breadCrumbTitle: "admin contract"
         }
-        res.render('admin/admin-contract', {"page": page});
+        res.render('admin/admin-contract', {"page": page, message: req.flash('message')});
     },
     contractCreation: (req, res) => {
         const page = {
@@ -44,19 +44,27 @@ module.exports = {
 
         if (req.method == 'POST') {
             let insertData = {
-                userAccountId: '',
-                firstName: '',
-                lastName: '',
-                email: '',
-                phone: '',
-                address: '',
-                city: '',
-                dateOfBirth: '',
-                membershipId: '',
-                country: '',
-                startDate: '',
-                endDate: '',
+                userAccountId: req.session.user.userId,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                phone: req.body.phone,
+                address: req.body.address,
+                city: req.body.city,
+                dateOfBirth: req.body.dateOfBirth,
+                accountCategory: req.body.accountCategory,
+                membershipId: req.body.membershipId,
+                country: req.body.country,
+                startDate: req.body.startDate,
+                endDate: req.body.endDate,
+
             };
+
+            api.createContract(insertData, req.session.user.token, function (error, response, body) {
+                req.flash('message', 'A new contract has created successful!');
+                res.redirect('/admin/admin-contract');
+            });
+
             return;
         }
 
