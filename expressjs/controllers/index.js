@@ -15,7 +15,7 @@ module.exports = {
 
         api.getSchedules({}, function (error, response, body) {
             let scheduleList = processJsonData(body);
-            res.render('schedule-list', {page: page, scheduleList: scheduleList, user: req.session.user});
+            res.render('schedule-list', {page: page, scheduleList: scheduleList, user: req.session.user, message: req.flash('message')});
         });
     },
     membership: (req, res) => {
