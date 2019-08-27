@@ -37,18 +37,20 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="error-container"></div>
                     <div class="row">
+                        <% bookings.forEach(function(booking) { %>
                             <div class="col-md-6" style="padding-bottom: 30px;">
                                 <div class="card">
                                     <div class="card-body">
                                         <p>
                                             <a href=""></a>
                                         </p>
-                                        <p> Sport name </p>
-                                        <p> Yard Phone </p>
-                                        <p> Yard City </p>
+                                        <p> <%= booking.sportName %> </p>
+                                        <p> <%= booking.phone %> </p>
+                                        <p> <%= booking.city %> </p>
                                     </div>
                                 </div>
                             </div>
+                        <% }) %>
                     </div>
                 </div>
             </div>

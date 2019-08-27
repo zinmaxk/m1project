@@ -78,4 +78,7 @@ module.exports = {
         callapi('/api/booking/', POST, params, callback, parseAuthorizationHeader(token, true));
     },
 
+    getBookings: (params = {}, token, callback) => {
+        callapi('/api/views/bookings?action=query', GET, params, callback, parseAuthorizationHeader(token));
+    },
 };

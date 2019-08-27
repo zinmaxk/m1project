@@ -73,7 +73,6 @@ module.exports = {
         });
     },
     contractDetail: (req, res) => {
-        // TODO: need to be authorized
         api.getContractDetail(req.params, req.session.user.token, function (error, response, body) {
             let data = processJsonData(body);
             const page = {
@@ -84,7 +83,6 @@ module.exports = {
         });
     },
     contractList: (req, res) => {
-        // TODO: need to be authorized
         api.getContractList({}, req.session.user.token, function (error, response, body) {
             let contracts = processJsonData(body);
             const page = {

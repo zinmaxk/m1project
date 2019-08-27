@@ -7,9 +7,16 @@ module.exports = {
         const page = {
             pageTitle: "User booking",
             breadCrumbTitle: "User booking"
-        }
-        res.render('player/player-booking', { "page": page });
+        };
+
+        api.getBookings({}, req.session.user.token, function (error, response, body) {
+            let bookings = processJsonData(body);
+
+            console.log(bookings);
+            res.render('player/player-booking', {page: page, bookings: bookings});
+        });
     },
+
     playerInfo: (req, res) => {
         let params = {id: req.session.user.userId};
         const page = {
