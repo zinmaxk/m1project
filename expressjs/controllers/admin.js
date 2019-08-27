@@ -55,9 +55,8 @@ module.exports = {
                 accountCategory: req.body.accountCategory,
                 membershipId: req.body.membershipId,
                 country: req.body.country,
-                startDate: req.body.startDate,
-                endDate: req.body.endDate,
-
+                startDate: req.body.startDate + ' 00:00:00',
+                endDate: req.body.endDate + ' 00:00:00',
             };
 
             api.createContract(insertData, req.session.user.token, function (error, response, body) {
